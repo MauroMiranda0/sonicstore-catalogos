@@ -1,11 +1,11 @@
-
-import './NotFound.css';
+// client/src/pages/NotFound/NotFound.jsx
+import React from 'react';
 
 function NotFound() {
   return (
-    <div className="notfound-page">
-      <h1>NotFound</h1>
-      <p>Bienvenido a la página NotFound.</p>
+    <div>
+      <h2>Error 404</h2>
+      <p>La página que estás buscando no fue encontrada.</p>
     </div>
   );
 }

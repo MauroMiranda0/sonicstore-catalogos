@@ -1,11 +1,11 @@
-
-import './Contact.css';
+// client/src/pages/Contact/Contact.jsx
+import React from 'react';
 
 function Contact() {
   return (
-    <div className="contact-page">
-      <h1>Contact</h1>
-      <p>Bienvenido a la página Contact.</p>
+    <div>
+      <h2>Contacto</h2>
+      <p>Información de contacto y formulario para clientes.</p>
     </div>
   );
 }

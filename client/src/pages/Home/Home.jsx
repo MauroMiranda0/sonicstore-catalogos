@@ -1,11 +1,11 @@
-
-import './Home.css';
+// client/src/pages/Home/Home.jsx
+import React from 'react';
 
 function Home() {
   return (
-    <div className="home-page">
-      <h1>Home</h1>
-      <p>Bienvenido a la página Home.</p>
+    <div>
+      <h2>Página de Inicio</h2>
+      <p>¡Bienvenido a SonicStore!</p>
     </div>
   );
 }

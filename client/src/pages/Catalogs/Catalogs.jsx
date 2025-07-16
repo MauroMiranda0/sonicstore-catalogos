@@ -1,11 +1,11 @@
-
-import './Catalogs.css';
+// client/src/pages/Catalogs/Catalogs.jsx
+import React from 'react';
 
 function Catalogs() {
   return (
-    <div className="catalogs-page">
-      <h1>Catalogs</h1>
-      <p>Bienvenido a la página Catalogs.</p>
+    <div>
+      <h2>Catálogos</h2>
+      <p>Visualiza los productos disponibles en nuestros catálogos.</p>
     </div>
   );
 }

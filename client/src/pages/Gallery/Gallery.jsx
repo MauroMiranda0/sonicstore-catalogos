@@ -1,11 +1,11 @@
-
-import './Gallery.css';
+// client/src/pages/Gallery/Gallery.jsx
+import React from 'react';
 
 function Gallery() {
   return (
-    <div className="gallery-page">
-      <h1>Gallery</h1>
-      <p>Bienvenido a la página Gallery.</p>
+    <div>
+      <h2>Galería</h2>
+      <p>Imágenes destacadas de nuestros productos y eventos.</p>
     </div>
   );
 }

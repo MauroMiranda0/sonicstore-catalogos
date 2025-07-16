@@ -1,11 +1,11 @@
-
-import './Testimonials.css';
+// client/src/pages/Testimonials/Testimonials.jsx
+import React from 'react';
 
 function Testimonials() {
   return (
-    <div className="testimonials-page">
-      <h1>Testimonials</h1>
-      <p>Bienvenido a la página Testimonials.</p>
+    <div>
+      <h2>Testimonios</h2>
+      <p>Lo que nuestros clientes dicen sobre nosotros.</p>
     </div>
   );
 }

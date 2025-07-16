@@ -1,11 +1,11 @@
-
-import './HowToBuy.css';
+// client/src/pages/HowToBuy/HowToBuy.jsx
+import React from 'react';
 
 function HowToBuy() {
   return (
-    <div className="howtobuy-page">
-      <h1>HowToBuy</h1>
-      <p>Bienvenido a la página HowToBuy.</p>
+    <div>
+      <h2>Cómo Comprar</h2>
+      <p>Guía paso a paso para realizar compras con nosotros.</p>
     </div>
   );
 }
