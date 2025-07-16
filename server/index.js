@@ -2,24 +2,25 @@
 
 const express = require('express');
 const cors = require('cors');
+const { catalogs } = require('./mockData'); // 1. Importa los datos
 
-// 1. Inicialización
 const app = express();
-const PORT = 3001; // Usaremos un puerto diferente al del cliente
+const PORT = 3001;
 
-// 2. Middlewares
-// Permite que nuestro servidor acepte peticiones desde el cliente (React)
-app.use(cors()); 
-// Permite que el servidor entienda datos enviados en formato JSON
-app.use(express.json()); 
+app.use(cors());
+app.use(express.json());
 
-// 3. Rutas (Endpoints)
-// Ruta de prueba para ver si el servidor funciona
+// Ruta de prueba existente
 app.get('/api', (req, res) => {
   res.json({ message: "¡Hola desde el servidor Express!" });
 });
 
-// 4. Iniciar el servidor
+// 2. NUEVA RUTA: Obtener todos los catálogos
+app.get('/api/catalogs', (req, res) => {
+  // Por ahora, simplemente devolvemos la lista completa
+  res.json(catalogs);
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
