@@ -1,0 +1,25 @@
+/* Definición de la paleta de colores y estilos globales */
+:root {
+  --primary-color: #EE4540;
+  --secondary-color: #C72C41;
+  --text-heading: #801336;
+  --background-dark: #2D142C;
+  --background-deep: #510A32;
+  --light-bg: #FFF8F7;
+}
+
+/* Reseteo básico y estilos base del cuerpo */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-bg); /* Usamos nuestra variable para el fondo */
+  color: var(--background-dark); /* Color de texto por defecto */
+}
+
+* {
+  box-sizing: border-box; /* Un reseteo útil para el manejo de tamaños */
+}
