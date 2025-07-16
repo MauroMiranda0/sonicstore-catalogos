@@ -1,23 +1,18 @@
 // client/src/App.jsx
 import { Outlet } from 'react-router-dom';
+import Navbar from './components/Navbar'; // 1. Importa el componente
 import './App.css';
 
 function App() {
   return (
     <div>
-      {/* Aquí irá nuestra barra de navegación en el futuro */}
-      <header>
-        <h1>SonicStore Catálogos</h1>
-        <p>Aquí irá la navegación</p>
-      </header>
+      <Navbar /> {/* 2. Utiliza el componente aquí */}
 
-      <main>
-        {/* El Outlet es donde React Router renderizará la página actual */}
+      <main className="container">
         <Outlet />
       </main>
       
-      {/* Aquí irá nuestro pie de página en el futuro */}
-      <footer>
+      <footer className="footer">
         <p>© 2024 SonicStore. Todos los derechos reservados.</p>
       </footer>
     </div>
