@@ -1,0 +1,30 @@
+/* client/src/pages/CatalogDetail/CatalogDetail.css */
+.catalog-detail-page {
+    max-width: 900px;
+    margin: auto;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.detail-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.detail-content img {
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.detail-info h1 {
+    margin-top: 0;
+}

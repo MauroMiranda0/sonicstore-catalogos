@@ -39,3 +39,9 @@
   margin: 0 1rem 1rem 1rem;
   color: #555;
 }
+
+/* client/src/pages/Catalogs/Catalogs.css */
+.catalog-link {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto del padre */
+}

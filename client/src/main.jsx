@@ -14,7 +14,7 @@ import Testimonials from './pages/Testimonials/Testimonials.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 // Importa las demás páginas que creaste...
 import Account from './pages/Account/Account.jsx';
-
+import CatalogDetail from './pages/CatalogDetail/CatalogDetail.jsx'; // 1. Importa el nuevo componente que crearemos  para mostrar los detalles del catálogo
 
 import './index.css';
 
@@ -37,6 +37,13 @@ const router = createBrowserRouter([
         path: 'catalogs',
         element: <Catalogs />,
       },
+      // 2. AÑADE LA NUEVA RUTA DINÁMICA
+      {
+        path: 'catalogs/:id', // La ruta con el parámetro
+        element: <CatalogDetail />,
+      },
+      // 3. AÑADE LAS OTRAS RUTAS
+      // Estas rutas son para las otras páginas que creaste
       {
         path: 'contact',
         element: <Contact />,

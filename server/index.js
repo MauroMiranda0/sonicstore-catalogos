@@ -11,16 +11,27 @@ app.use(cors());
 app.use(express.json());
 
 // Ruta de prueba existente
-app.get('/api', (req, res) => {
-  res.json({ message: "¡Hola desde el servidor Express!" });
-});
-
-// 2. NUEVA RUTA: Obtener todos los catálogos
+// RUTA: Obtener todos los catálogos
 app.get('/api/catalogs', (req, res) => {
-  // Por ahora, simplemente devolvemos la lista completa
   res.json(catalogs);
 });
 
+// NUEVA RUTA: Obtener un solo catálogo por su ID
+app.get('/api/catalogs/:id', (req, res) => {
+  // 1. Obtenemos el ID de los parámetros de la URL
+  const id = parseInt(req.params.id); // req.params.id es un string, lo convertimos a número
+
+  // 2. Buscamos el catálogo en nuestros datos de prueba
+  const catalog = catalogs.find(c => c.id === id);
+
+  // 3. Respondemos
+  if (catalog) {
+    res.json(catalog); // Si lo encontramos, lo enviamos
+  } else {
+    // Si no existe un catálogo con ese ID, enviamos un error 404
+    res.status(404).json({ message: 'Catálogo no encontrado' });
+  }
+});
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

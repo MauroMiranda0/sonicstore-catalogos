@@ -1,5 +1,6 @@
 // client/src/pages/Catalogs/Catalogs.jsx
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // 1. IMPORTAR LINK
 import './Catalogs.css'; // Crearemos este archivo para los estilos
 
 function Catalogs() {
@@ -30,18 +31,18 @@ function Catalogs() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="catalogs-page">
-      <h2>Nuestros Catálogos</h2>
-      <div className="catalogs-grid">
+    <div className="catalogs-grid">
         {catalogs.map(catalog => (
-          <div key={catalog.id} className="catalog-card">
-            <img src={catalog.image} alt={catalog.name} />
-            <h3>{catalog.name}</h3>
-            <p>{catalog.description}</p>
-          </div>
+          // 2. ENVOLVER LA TARJETA CON LINK
+          <Link to={`/catalogs/${catalog.id}`} key={catalog.id} className="catalog-link">
+            <div className="catalog-card">
+              <img src={catalog.image} alt={catalog.name} />
+              <h3>{catalog.name}</h3>
+              <p>{catalog.description}</p>
+            </div>
+          </Link>
         ))}
       </div>
-    </div>
   );
 }
 
