@@ -2,7 +2,7 @@
 
 const express = require('express');
 const cors = require('cors');
-const { catalogs } = require('./mockData'); // 1. Importa los datos
+const { catalogs, testimonials } = require('./mockData'); // 1. Importa los datos
 
 const app = express();
 const PORT = 3001;
@@ -32,6 +32,12 @@ app.get('/api/catalogs/:id', (req, res) => {
     res.status(404).json({ message: 'Catálogo no encontrado' });
   }
 });
+
+// NUEVA RUTA: Obtener todos los testimonios
+app.get('/api/testimonials', (req, res) => {
+  res.json(testimonials);
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

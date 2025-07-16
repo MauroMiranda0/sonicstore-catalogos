@@ -11,9 +11,10 @@ function Navbar() {
       </Link>
       <ul className="navbar-links">
         <li><NavLink to="/">Inicio</NavLink></li>
+        <li><NavLink to="/about">Nosotros</NavLink></li>
         <li><NavLink to="/catalogs">Catálogos</NavLink></li>
         <li><NavLink to="/gallery">Galería</NavLink></li>
-        <li><NavLink to="/about">Nosotros</NavLink></li>
+        <li><NavLink to="/testimonials">Testimonios</NavLink></li> {/* <-- AÑADE ESTE */}
         <li><NavLink to="/contact">Contacto</NavLink></li>
       </ul>
     </nav>

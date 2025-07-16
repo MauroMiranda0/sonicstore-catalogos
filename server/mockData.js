@@ -1,3 +1,4 @@
+// server/mockData.js
 const catalogs = [
   { id: 1, name: 'Zapatos Deportivos', description: 'Calzado cómodo y moderno para entrenamiento y uso diario.', image: 'https://via.placeholder.com/300x200.png?text=Zapatos+Deportivos' },
   { id: 2, name: 'Zapatos Elegantes', description: 'Estilo y sofisticación para ocasiones especiales.', image: 'https://via.placeholder.com/300x200.png?text=Zapatos+Elegantes' },
@@ -11,8 +12,17 @@ const catalogs = [
   { id: 10, name: 'Organizadores para el Hogar', description: 'Cajas, estantes y soluciones inteligentes para ordenar.', image: 'https://via.placeholder.com/300x200.png?text=Organizadores' },
 ];
 
+// NUEVOS DATOS
+const testimonials = [
+  { id: 201, author: 'María León', quote: 'Los zapatos deportivos son súper cómodos. Perfectos para mi rutina diaria.', avatar: 'https://i.pravatar.cc/150?u=marialuisa' },
+  { id: 202, author: 'Ana Sofía', quote: 'El maquillaje natural me sorprendió. Textura ligera y muy duradero.', avatar: 'https://i.pravatar.cc/150?u=anasofia' },
+  { id: 203, author: 'Luis Gutiérrez', quote: 'Compré ropa formal para mi trabajo y quedé encantado con la calidad y el estilo.', avatar: 'https://i.pravatar.cc/150?u=luis' },
+  { id: 204, author: 'Carmen Ortega', quote: 'La decoración para el hogar transformó mi sala. ¡Todo muy elegante y funcional!', avatar: 'https://i.pravatar.cc/150?u=carmen' },
+  { id: 205, author: 'Daniela Ruiz', quote: 'Los organizadores me ayudaron a tener un hogar más ordenado. ¡Gracias por la variedad!', avatar: 'https://i.pravatar.cc/150?u=daniela' },
+];
+
 module.exports = {
   catalogs,
+  testimonials, // Exportamos los nuevos datos
 };
-// server/mockData.js
-// Este archivo exporta un arreglo de objetos que representan los catálogos de productos.
+// Este archivo exporta un arreglo de objetos que representan los catálogos de productos y los testimonios de clientes.
