@@ -14,11 +14,10 @@ const catalogs = [
 
 // NUEVOS DATOS
 const testimonials = [
-  { id: 201, author: 'María León', quote: 'Los zapatos deportivos son súper cómodos. Perfectos para mi rutina diaria.', avatar: 'https://i.pravatar.cc/150?u=marialuisa' },
-  { id: 202, author: 'Ana Sofía', quote: 'El maquillaje natural me sorprendió. Textura ligera y muy duradero.', avatar: 'https://i.pravatar.cc/150?u=anasofia' },
-  { id: 203, author: 'Luis Gutiérrez', quote: 'Compré ropa formal para mi trabajo y quedé encantado con la calidad y el estilo.', avatar: 'https://i.pravatar.cc/150?u=luis' },
-  { id: 204, author: 'Carmen Ortega', quote: 'La decoración para el hogar transformó mi sala. ¡Todo muy elegante y funcional!', avatar: 'https://i.pravatar.cc/150?u=carmen' },
-  { id: 205, author: 'Daniela Ruiz', quote: 'Los organizadores me ayudaron a tener un hogar más ordenado. ¡Gracias por la variedad!', avatar: 'https://i.pravatar.cc/150?u=daniela' },
+  { id: 101, author: 'Carlos Santana', quote: 'La selección de productos es simplemente celestial. Encontré el estilo que buscaba por años.', avatar: 'https://i.pravatar.cc/150?u=carlos', rating: 5 },
+  { id: 102, author: 'Flea', quote: '¡Estos zapatos tienen un look increíble! El servicio al cliente fue de primera.', avatar: 'https://i.pravatar.cc/150?u=flea', rating: 5 },
+  { id: 103, author: 'Alicia Keys', quote: 'El maquillaje que compré tiene una pigmentación y un acabado espectacular. La entrega fue rapidísima.', avatar: 'https://i.pravatar.cc/150?u=alicia', rating: 4 },
+  //{ id: 104, author: 'John Bonham', quote: '¡Boom! Los artículos para el hogar son de una calidad increíble. ¡Recomendado!', avatar: 'https://i.pravatar.cc/150?u=john', rating: 5 },
 ];
 
 module.exports = {

@@ -31,18 +31,32 @@ function Catalogs() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="catalogs-grid">
+    <div className="catalogs-page">
+      <h2>Nuestros Catálogos</h2>
+      <div className="catalogs-grid">
         {catalogs.map(catalog => (
-          // 2. ENVOLVER LA TARJETA CON LINK
+          // El Link sigue envolviendo todo para que la tarjeta sea clickeable
           <Link to={`/catalogs/${catalog.id}`} key={catalog.id} className="catalog-link">
+            
+            {/* NUEVA ESTRUCTURA INTERNA DE LA TARJETA */}
             <div className="catalog-card">
-              <img src={catalog.image} alt={catalog.name} />
-              <h3>{catalog.name}</h3>
-              <p>{catalog.description}</p>
+              <div className="card-image-container">
+                <img src={catalog.image} alt={catalog.name} />
+              </div>
+              <div className="card-content">
+                <h3>{catalog.name}</h3>
+                <p>{catalog.description}</p>
+                {/* Este div simulará ser nuestro botón */}
+                <div className="card-button">
+                  Ver Productos
+                </div>
+              </div>
             </div>
+            
           </Link>
         ))}
       </div>
+    </div>
   );
 }
 

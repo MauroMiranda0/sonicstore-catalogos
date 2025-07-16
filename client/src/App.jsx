@@ -1,12 +1,12 @@
 // client/src/App.jsx
 import { Outlet } from 'react-router-dom';
-import Navbar from './components/Navbar'; // 1. Importa el componente
+import Header from './components/Header'; // <-- CAMBIA ESTO
 import './App.css';
 
 function App() {
   return (
     <div>
-      <Navbar /> {/* 2. Utiliza el componente aquí */}
+      <Header /> {/* <-- Y ESTO */}
 
       <main className="container">
         <Outlet />

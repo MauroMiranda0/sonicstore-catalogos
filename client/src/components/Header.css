@@ -1,0 +1,126 @@
+/* client/src/components/Header.css */
+
+.site-header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Usaremos esta clase 'container' para centrar el contenido */
+.site-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Header Superior --- */
+.header-top {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-logo img {
+  height: 40px; /* Ajusta la altura de tu logo */
+}
+
+.header-search {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px; /* Bordes redondeados */
+  overflow: hidden;
+  width: 40%;
+}
+
+.header-search input {
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  outline: none;
+}
+
+.header-search button {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 0 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.header-search button:hover {
+  background-color: var(--secondary-color);
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-icons a {
+  font-size: 1.5rem; /* Tamaño de los iconos */
+  color: #333;
+  transition: color 0.2s;
+}
+
+.header-icons a:hover {
+  color: var(--primary-color);
+}
+
+/* --- Header Principal (Navegación) --- */
+.header-main {
+  padding: 0.5rem 0;
+}
+
+.header-main .container {
+  justify-content: center; /* Centramos la navegación */
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.main-nav a {
+  padding: 0.5rem 0;
+  font-weight: 600; /* Texto semibold */
+  text-transform: uppercase; /* MAYÚSCULAS para un look de moda */
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: var(--text-main);
+  position: relative;
+  text-decoration: none;
+}
+
+/* Estilo para el enlace activo */
+.main-nav a.active {
+  color: var(--primary-color);
+}
+
+.main-nav a:hover {
+  color: var(--primary-color);
+  text-decoration: none; /* Sin subrayado en hover */
+}
+
+/* Efecto de subrayado en el hover */
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
