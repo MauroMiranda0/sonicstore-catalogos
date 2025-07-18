@@ -1,0 +1,108 @@
+/* client/src/components/HeroCarousel.css */
+
+.hero-carousel {
+  width: 100%;
+  padding: 4rem 0; /* Espacio vertical generoso */
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-text {
+  padding-right: 2rem; /* Espacio entre el texto y la imagen */
+}
+
+.hero-pretitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: 4rem; /* Título grande e impactante */
+  color: var(--text-heading);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.hero-cta-button {
+  display: inline-block;
+  background-color: var(--background-dark); /* Botón oscuro como en la referencia */
+  color: #fff;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-cta-button:hover {
+  background-color: var(--background-deep);
+}
+
+.hero-navigation {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-navigation button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.hero-navigation button:hover {
+  background-color: #fff;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.hero-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-wrapper {
+  width: 450px;
+  height: 600px; /* más alto que ancho */
+  border-radius: 1000px; /* esquinas suavemente redondeadas */
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.hero-image.active {
+  opacity: 1;
+  transform: scale(1);
+}
