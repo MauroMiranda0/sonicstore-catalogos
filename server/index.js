@@ -38,6 +38,35 @@ app.get('/api/testimonials', (req, res) => {
   res.json(testimonials);
 });
 
+
+// NUEVA RUTA: Recibir datos del formulario de contacto
+app.post('/api/contact', (req, res) => {
+  // Los datos enviados desde el frontend están en `req.body`
+  // Gracias al middleware `app.use(express.json());` que pusimos al principio
+  const { name, email, message } = req.body;
+
+  console.log('--- Nuevo Mensaje de Contacto Recibido ---');
+  console.log('Nombre:', name);
+  console.log('Email:', email);
+  console.log('Mensaje:', message);
+  console.log('-----------------------------------------');
+  
+  // En un proyecto real, aquí enviarías un email o guardarías en la base de datos.
+  // Por ahora, solo simulamos el éxito.
+
+  // Validamos que los datos no estén vacíos
+  if (!name || !email || !message) {
+    return res.status(400).json({ message: 'Todos los campos son obligatorios.' });
+  }
+
+  res.status(200).json({ message: '¡Mensaje recibido con éxito! Te contactaremos pronto.' });
+});
+
+app.use((req, res) => {
+  res.status(404).json({ message: 'Ruta no encontrada' });
+});
+
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
