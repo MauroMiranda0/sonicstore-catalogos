@@ -67,3 +67,6 @@ function Home() {
 }
 
 export default Home;
+// client/src/pages/Home/Home.jsx
+// Aquí hemos simplificado la estructura del slide y añadido una capa de superposición para oscurecer la imagen de fondo.
+// También hemos añadido un botón de llamada a la acción (CTA) que redirige a la página de catálogos.

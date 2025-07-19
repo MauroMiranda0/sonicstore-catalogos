@@ -11,8 +11,8 @@ function FeaturedProducts() {
   return (
     <section className="featured-products-section">
       <div className="section-header">
-        <h2>New Arrivals</h2>
-        <Link to="/products" className="see-all-link">See All</Link>
+        <h2>Nuevos Productos</h2>
+        <Link to="/catalogs" className="see-all-link">Ver Catalogos</Link>
       </div>
       
       {loading && <div>Loading products...</div>}

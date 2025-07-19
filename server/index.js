@@ -24,6 +24,21 @@ app.get('/api/products', (req, res) => {
     res.json(products);
   }
 });
+// NUEVA RUTA: Obtener un solo producto por su ID
+app.get('/api/products/:id', (req, res) => {
+  // Obtenemos el ID de los parámetros de la URL y lo convertimos a número
+  const id = parseInt(req.params.id);
+
+  // Buscamos el producto en nuestro array de datos
+  const product = products.find(p => p.id === id);
+
+  if (product) {
+    res.json(product); // Si lo encontramos, lo enviamos
+  } else {
+    // Si no existe, enviamos un error 404 "No Encontrado"
+    res.status(404).json({ message: 'Producto no encontrado' });
+  }
+});
 // RUTA: Obtener todos los catálogos
 app.get('/api/catalogs', (req, res) => {
   res.json(catalogs);

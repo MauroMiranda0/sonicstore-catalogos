@@ -21,7 +21,7 @@ function ProductCard({ product }) {
         </div>
         <div className="product-meta">
           <span className="product-price">${product.price.toFixed(2)}</span>
-          <span className="stock-status">Stock Available</span>
+          <span className="stock-code">Cod. 012345</span>
         </div>
       </div>
     </div>

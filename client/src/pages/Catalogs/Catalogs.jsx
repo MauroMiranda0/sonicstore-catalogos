@@ -29,7 +29,7 @@ function Catalogs() {
                 <h3>{catalog.name}</h3>
                 <p>{catalog.description}</p>
                 <div className="card-button">
-                  Ver Productos
+                  Ver Catalogo
                 </div>
               </div>
             </div>
