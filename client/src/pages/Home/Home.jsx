@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade'; // ¡Esta línea es crucial para el efecto fade!
 import FeaturedProducts from '../../components/FeaturedProducts'; // Importa la nueva sección
+import CatalogSlider from '../../components/CatalogSlider'; // 1. Importa el nuevo componente
 
 import './Home.css';
 
@@ -21,10 +22,10 @@ import heroImage3 from '../../assets/hero-product-3.jpg';
 
 // Los datos de los slides siguen siendo los mismos
 const heroSlides = [
-    { id: 0, subtitle: 'La belleza en cada detalle', title: 'Colecciones que inspiran', image: heroImage0, link: '/catalogs' },
-    { id: 1, subtitle: 'La belleza en cada detalle', title: 'Colecciones que inspiran', image: heroImage1, link: '/catalogs' },
-    { id: 2, subtitle: 'Nuevas llegadas', title: 'Estilo para tu Hogar', image: heroImage2, link: '/catalogs' },
-    { id: 3, subtitle: 'Temporada de color', title: 'Maquillaje vibrante', image: heroImage3, link: '/catalogs' },
+  { id: 0, subtitle: 'La belleza en cada detalle', title: 'Colecciones que inspiran', image: heroImage0, link: '/catalogs' },
+  { id: 1, subtitle: 'La belleza en cada detalle', title: 'Colecciones que inspiran', image: heroImage1, link: '/catalogs' },
+  { id: 2, subtitle: 'Nuevas llegadas', title: 'Estilo para tu Hogar', image: heroImage2, link: '/catalogs' },
+  { id: 3, subtitle: 'Temporada de color', title: 'Maquillaje vibrante', image: heroImage3, link: '/catalogs' },
 ];
 
 function Home() {
@@ -60,8 +61,10 @@ function Home() {
       </section>
       {/* AÑADE LA NUEVA SECCIÓN AQUÍ */}
       <div className="container">
-          <FeaturedProducts />
+        <FeaturedProducts />
       </div>
+      {/* 2. AÑADE LA NUEVA SECCIÓN AQUÍ */}
+      <CatalogSlider />
     </div>
   );
 }
