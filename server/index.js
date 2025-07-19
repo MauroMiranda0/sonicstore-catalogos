@@ -2,7 +2,7 @@
 
 const express = require('express');
 const cors = require('cors');
-const { catalogs, testimonials } = require('./mockData'); // 1. Importa los datos
+const { catalogs, testimonials, heroSlides } = require('./mockData'); // 1. Importa los datos
 
 const app = express();
 const PORT = 3001;
@@ -11,6 +11,10 @@ app.use(cors());
 app.use(express.json());
 
 // Ruta de prueba existente
+// NUEVA RUTA: Obtener los slides del hero
+app.get('/api/hero-slides', (req, res) => {
+  res.json(heroSlides);
+});
 // RUTA: Obtener todos los catálogos
 app.get('/api/catalogs', (req, res) => {
   res.json(catalogs);

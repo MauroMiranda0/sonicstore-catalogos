@@ -20,8 +20,36 @@ const testimonials = [
   //{ id: 104, author: 'John Bonham', quote: '¡Boom! Los artículos para el hogar son de una calidad increíble. ¡Recomendado!', avatar: 'https://i.pravatar.cc/150?u=john', rating: 5 },
 ];
 
+const heroSlides = [
+  {
+    id: 'slide01',
+    pretitle: 'Novedades de Temporada',
+    title: 'Colección Otoño/Invierno',
+    imageUrl: 'https://picsum.photos/id/1027/800/800', // Mujer con sombrero
+    ctaText: 'Descubrir Colección',
+    ctaLink: '/catalogs/3', // Enlaza a un catálogo existente
+  },
+  {
+    id: 'slide02',
+    pretitle: 'Esenciales de Belleza',
+    title: 'Brilla con Luz Propia',
+    imageUrl: 'https://picsum.photos/id/1025/800/800', // Perro? (placeholder, idealmente sería un producto de belleza)
+    ctaText: 'Comprar Maquillaje',
+    ctaLink: '/catalogs/5',
+  },
+  {
+    id: 'slide03',
+    pretitle: 'Estilo para tu Hogar',
+    title: 'Espacios que Inspiran',
+    imageUrl: 'https://picsum.photos/id/106/800/800', // Interiores de casa
+    ctaText: 'Ver Artículos del Hogar',
+    ctaLink: '/catalogs/4',
+  }
+];
+
 module.exports = {
   catalogs,
-  testimonials, // Exportamos los nuevos datos
+  testimonials,
+  heroSlides, // Exportamos los nuevos datos
 };
 // Este archivo exporta un arreglo de objetos que representan los catálogos de productos y los testimonios de clientes.
