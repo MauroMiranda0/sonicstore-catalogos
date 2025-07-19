@@ -1,0 +1,64 @@
+/* client/src/components/ProductCard.css */
+.product-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-container {
+  aspect-ratio: 1 / 1.1;
+  background-color: #f7f7f7;
+}
+
+.product-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.brand-icon {
+  height: 16px;
+  width: auto;
+}
+
+.product-name {
+  font-weight: 600;
+  color: var(--text-heading);
+  font-size: 1rem;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.stock-status {
+  font-size: 0.8rem;
+  color: #5bb381; /* Un color verde para el stock */
+  font-weight: 500;
+}

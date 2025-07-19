@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade'; // ¡Esta línea es crucial para el efecto fade!
+import FeaturedProducts from '../../components/FeaturedProducts'; // Importa la nueva sección
 
 import './Home.css';
 
@@ -57,6 +58,10 @@ function Home() {
           ))}
         </Swiper>
       </section>
+      {/* AÑADE LA NUEVA SECCIÓN AQUÍ */}
+      <div className="container">
+          <FeaturedProducts />
+      </div>
     </div>
   );
 }

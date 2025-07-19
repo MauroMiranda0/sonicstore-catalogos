@@ -2,7 +2,7 @@
 
 const express = require('express');
 const cors = require('cors');
-const { catalogs, testimonials, heroSlides } = require('./mockData'); // 1. Importa los datos
+const { catalogs, testimonials, products } = require('./mockData'); // 1. Importa los datos
 
 const app = express();
 const PORT = 3001;
@@ -11,9 +11,18 @@ app.use(cors());
 app.use(express.json());
 
 // Ruta de prueba existente
-// NUEVA RUTA: Obtener los slides del hero
-app.get('/api/hero-slides', (req, res) => {
-  res.json(heroSlides);
+// NUEVA RUTA: Obtener productos, con opción de filtrar por destacados
+app.get('/api/products', (req, res) => {
+  // Verificamos si la URL tiene un query parameter "?featured=true"
+  const { featured } = req.query; 
+
+  if (featured === 'true') {
+    const featuredProducts = products.filter(p => p.featured);
+    res.json(featuredProducts);
+  } else {
+    // Si no se pide filtrar, se devuelven todos
+    res.json(products);
+  }
 });
 // RUTA: Obtener todos los catálogos
 app.get('/api/catalogs', (req, res) => {

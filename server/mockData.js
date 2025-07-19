@@ -20,36 +20,21 @@ const testimonials = [
   //{ id: 104, author: 'John Bonham', quote: '¡Boom! Los artículos para el hogar son de una calidad increíble. ¡Recomendado!', avatar: 'https://i.pravatar.cc/150?u=john', rating: 5 },
 ];
 
-const heroSlides = [
-  {
-    id: 'slide01',
-    pretitle: 'Novedades de Temporada',
-    title: 'Colección Otoño/Invierno',
-    imageUrl: 'https://picsum.photos/id/1027/800/800', // Mujer con sombrero
-    ctaText: 'Descubrir Colección',
-    ctaLink: '/catalogs/3', // Enlaza a un catálogo existente
-  },
-  {
-    id: 'slide02',
-    pretitle: 'Esenciales de Belleza',
-    title: 'Brilla con Luz Propia',
-    imageUrl: 'https://picsum.photos/id/1025/800/800', // Perro? (placeholder, idealmente sería un producto de belleza)
-    ctaText: 'Comprar Maquillaje',
-    ctaLink: '/catalogs/5',
-  },
-  {
-    id: 'slide03',
-    pretitle: 'Estilo para tu Hogar',
-    title: 'Espacios que Inspiran',
-    imageUrl: 'https://picsum.photos/id/106/800/800', // Interiores de casa
-    ctaText: 'Ver Artículos del Hogar',
-    ctaLink: '/catalogs/4',
-  }
+const products = [
+  { id: 201, catalogId: 1, name: 'Classic Striped Shirt', price: 40.00, image: 'https://i.imgur.com/QpjH5Jz.jpg', featured: true },
+  { id: 202, catalogId: 1, name: 'Elegance White Dress', price: 75.00, image: 'https://i.imgur.com/r652d3p.jpg', featured: true },
+  { id: 203, catalogId: 1, name: '4 Button Blazer', price: 120.00, image: 'https://i.imgur.com/dJb2tA9.jpg', featured: true },
+  { id: 204, catalogId: 1, name: 'Varsity Jacket', price: 95.00, image: 'https://i.imgur.com/mgpCjXU.jpg', featured: true },
+  { id: 205, catalogId: 2, name: 'Radiant Finish Foundation', price: 35.00, image: 'https://i.imgur.com/S2m2t2S.jpg', featured: false },
+  { id: 206, catalogId: 2, name: 'Velvet Matte Lipstick', price: 22.00, image: 'https://i.imgur.com/K1vB7vO.jpg', featured: true },
+  { id: 207, catalogId: 3, name: 'Platform Ankle Boots', price: 85.00, image: 'https://i.imgur.com/o7z4D5r.jpg', featured: false },
 ];
 
+
+// No olvides exportar los nuevos datos
 module.exports = {
   catalogs,
   testimonials,
-  heroSlides, // Exportamos los nuevos datos
+  products,
 };
 // Este archivo exporta un arreglo de objetos que representan los catálogos de productos y los testimonios de clientes.
