@@ -1,0 +1,68 @@
+<section class="marcas">
+        <h2>Nuestras Marcas</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><img src="img/marcas/marca1.png" alt="Marca 1"></div>
+                <div class="slide"><img src="img/marcas/marca2.png" alt="Marca 2"></div>
+                <div class="slide"><img src="img/marcas/marca3.png" alt="Marca 3"></div>
+                <div class="slide"><img src="img/marcas/marca4.png" alt="Marca 4"></div>
+                <div class="slide"><img src="img/marcas/marca5.png" alt="Marca 5"></div>
+                <div class="slide"><img src="img/marcas/marca6.png" alt="Marca 6"></div>
+                <div class="slide"><img src="img/marcas/marca7.png" alt="Marca 7"></div>
+                <div class="slide"><img src="img/marcas/marca8.png" alt="Marca 8"></div>
+                <div class="slide"><img src="img/marcas/marca9.png" alt="Marca 9"></div>
+                <div class="slide"><img src="img/marcas/marca10.png" alt="Marca 10"></div>
+            </div>
+        </div>
+    </section>
+
+/* Nuestras marcas */
+
+.marcas {
+    text-align: center;
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 75%;
+    margin: auto;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    gap: 50px;
+    animation: scroll 10s linear infinite;
+}
+
+.slide img {
+    max-width: 150px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.slide img:hover {
+    filter: grayscale(0%);
+}
+
+/* Animación de desplazamiento */
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
