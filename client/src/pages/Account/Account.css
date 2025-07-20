@@ -1,0 +1,96 @@
+/* client/src/pages/Account/Account.css */
+
+.account-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem;
+    background-color: var(--light-bg);
+    min-height: calc(100vh - 200px);
+}
+
+.auth-container {
+    max-width: 450px;
+    width: 100%;
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.auth-form h2 {
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-form>p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+
+/* Reutilizamos los estilos del formulario de contacto */
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(238, 69, 64, 0.2);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.auth-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.switch-form-text {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.switch-form-button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+}
