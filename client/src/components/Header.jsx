@@ -38,6 +38,7 @@ function Header() {
           <nav className="main-nav">
             <ul>
               <li><NavLink to="/">Inicio</NavLink></li>
+              <li><NavLink to="/about">Nosotros</NavLink></li>
               <li><NavLink to="/catalogs">Catálogos</NavLink></li>
               <li><NavLink to="/gallery">Galería</NavLink></li>
               <li><NavLink to="/how-to-buy">Cómo Comprar</NavLink></li>

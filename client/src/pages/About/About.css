@@ -1,0 +1,98 @@
+/* client/src/pages/About/About.css */
+
+
+/* --- Cabecera de la Página --- */
+
+.about-header {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: var(--light-bg);
+}
+
+.about-header h1 {
+    font-family: 'Lora', serif;
+    font-size: 3.5rem;
+}
+
+.about-header .page-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0.5rem auto 0 auto;
+}
+
+
+/* --- Sección de Nuestra Historia --- */
+
+.about-story-section {
+    padding: 4rem 0;
+    background-color: #fff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.story-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.story-content p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+
+/* --- Sección de Misión y Visión --- */
+
+.about-mission-section {
+    padding: 4rem 0;
+    background-color: var(--light-bg);
+}
+
+.mission-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.mission-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.mission-card h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.mission-card p {
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 0;
+}
+
+
+/* --- Diseño Responsivo para la página About --- */
+
+@media (max-width: 768px) {
+    .about-grid,
+    .mission-cards {
+        grid-template-columns: 1fr;
+    }
+}
