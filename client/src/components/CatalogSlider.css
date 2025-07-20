@@ -95,6 +95,56 @@
 
 /* Estilos para los puntos de paginación de Swiper */
 
+
+/* --- Estilos para los botones de navegación personalizados --- */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider-nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* Espaciado entre botones opcional */
+    gap: 0.5rem;
+}
+
+.custom-prev-btn,
+.custom-next-btn {
+    background-color: transparent;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-heading);
+    transition: all 0.2s ease;
+}
+
+.custom-prev-btn:hover,
+.custom-next-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+
+/* Estilos para cuando un botón está deshabilitado (ej. al principio o al final del slider) */
+
+.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f0f0f0 !important;
+    color: #aaa !important;
+    border-color: #e0e0e0 !important;
+}
+
 .catalog-swiper .swiper-pagination-bullet {
     background-color: #ccc;
     opacity: 1;
