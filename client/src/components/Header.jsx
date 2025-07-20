@@ -40,7 +40,6 @@ function Header() {
               <li><NavLink to="/">Inicio</NavLink></li>
               <li><NavLink to="/catalogs">Catálogos</NavLink></li>
               <li><NavLink to="/gallery">Galería</NavLink></li>
-              <li><NavLink to="/testimonials">Testimonios</NavLink></li>
               <li><NavLink to="/how-to-buy">Cómo Comprar</NavLink></li>
               <li><NavLink to="/contact">Contacto</NavLink></li>
             </ul>

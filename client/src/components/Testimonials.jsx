@@ -1,7 +1,7 @@
 // client/src/pages/Testimonials/Testimonials.jsx
 import React from 'react';
 import { FaStar, FaRegStar } from 'react-icons/fa'; // Importamos iconos de estrella llena y vacía
-import useFetch from '../../hooks/useFetch'; // 1. Importa el hook
+import useFetch from '../hooks/useFetch'; // 1. Importa el hook
 import './Testimonials.css';
 
 // Pequeño componente auxiliar para renderizar las estrellas

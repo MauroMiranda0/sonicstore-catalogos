@@ -1,0 +1,58 @@
+/* client/src/components/FinalCTA.css */
+
+.final-cta-section {
+    padding: 4rem 0;
+    background-color: var(--background-deep);
+    color: #fff;
+}
+
+.cta-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.cta-image img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.cta-text h2 {
+    font-family: 'Lora', serif;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.cta-text p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .cta-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .cta-image {
+        order: -1;
+        /* Mueve la imagen arriba en móviles */
+        margin-bottom: 2rem;
+    }
+}

@@ -12,6 +12,10 @@ import 'swiper/css/effect-fade'; // ¡Esta línea es crucial para el efecto fade
 import FeaturedProducts from '../../components/FeaturedProducts'; // Importa la nueva sección
 import CatalogSlider from '../../components/CatalogSlider'; // 1. Importa el nuevo componente
 import BrandSlider from '../../components/BrandSlider'; // 1. Importa el nuevo componente
+import BenefitsSection from '../../components/BenefitsSection';
+import Testimonials from '../../components/Testimonials'; // Importa la nueva sección de testimonios
+import FinalCTA from '../../components/FinalCTA';
+// Importa el CSS de la página  
 
 import './Home.css';
 
@@ -60,14 +64,17 @@ function Home() {
           ))}
         </Swiper>
       </section>
-      {/* AÑADE LA NUEVA SECCIÓN AQUÍ */}
+      {/* AÑADE LAS NUEVAS SECCIONES AQUÍ */}
       <div className="container">
         <FeaturedProducts />
       </div>
-      {/* 2. AÑADE LA NUEVA SECCIÓN AQUÍ */}
       <CatalogSlider />
-      {/* 2. AÑADE LA NUEVA SECCIÓN AQUÍ */}
+       <div className="container">
       <BrandSlider />
+       </div>
+      <BenefitsSection />
+      <Testimonials />
+      <FinalCTA />
     </div>
   );
 }
