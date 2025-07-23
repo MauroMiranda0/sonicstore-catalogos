@@ -29,3 +29,40 @@
 .detail-info h1 {
     margin-top: 0;
 }
+
+/* client/src/pages/CatalogDetail/CatalogDetail.css */
+/* ... (estilos existentes) ... */
+.catalog-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.view-catalog-btn, .add-to-order-btn {
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.view-catalog-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+.view-catalog-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.add-to-order-btn {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+.add-to-order-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
