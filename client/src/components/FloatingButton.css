@@ -1,0 +1,24 @@
+/* client/src/components/FloatingButton.css */
+.floating-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 999;
+  transition: transform 0.2s ease;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+}

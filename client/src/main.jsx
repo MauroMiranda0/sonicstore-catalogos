@@ -9,7 +9,6 @@ import About from './pages/About/About.jsx';
 import Catalogs from './pages/Catalogs/Catalogs.jsx';
 import Contact from './pages/Contact/Contact.jsx';
 import Gallery from './pages/Gallery/Gallery.jsx';
-import HowToBuy from './pages/HowToBuy/HowToBuy.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 // Importa las demás páginas que creaste...
 import Account from './pages/Account/Account.jsx';
@@ -56,10 +55,6 @@ const router = createBrowserRouter([
       {
         path: 'gallery',
         element: <Gallery />,
-      },
-      {
-        path: 'how-to-buy',
-        element: <HowToBuy />,
       },
       {
         path: 'account',

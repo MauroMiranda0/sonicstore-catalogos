@@ -44,12 +44,6 @@ function Header() {
               )}
             </button>
           </div>
-
-          {/* <div className="header-icons">
-            <Link to="/account" aria-label="Mi Cuenta"><FaUserCircle /></Link>
-            <Link to="/wishlist" aria-label="Lista de Deseos"><FaHeart /></Link>
-            <Link to="/cart" aria-label="Carrito de Compras"><FaShoppingCart /></Link>
-          </div> */}
         </div>
       </div>
 
@@ -62,7 +56,6 @@ function Header() {
               <li><NavLink to="/about">Nosotros</NavLink></li>
               <li><NavLink to="/catalogs">Catálogos</NavLink></li>
               <li><NavLink to="/gallery">Galería</NavLink></li>
-              <li><NavLink to="/how-to-buy">Cómo Comprar</NavLink></li>
               <li><NavLink to="/contact">Contacto</NavLink></li>
             </ul>
           </nav>
