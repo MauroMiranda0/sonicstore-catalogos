@@ -6,9 +6,15 @@ import './Header.css'; // Importamos el nuevo archivo CSS
 import logo from '../assets/logo.png'; // Importamos nuestro logo
 
 // Importamos los iconos que vamos a usar desde react-icons
-import { FaUserCircle, FaSearch, FaHeart, FaShoppingCart } from 'react-icons/fa';
+// 1. Importa los nuevos iconos y el store
+import { FaWhatsapp, FaUserCircle, FaShoppingBag, FaSearch } from 'react-icons/fa';
+import useCartStore from '../stores/cartStore';
 
 function Header() {
+  // 2. Accede al estado del store
+  // Usamos un 'selector' para que el componente solo se vuelva a renderizar si 'items' cambia.
+  const items = useCartStore((state) => state.items);
+
   return (
     <header className="site-header">
       {/* ===== HEADER SUPERIOR ===== */}
@@ -24,11 +30,26 @@ function Header() {
              <button><FaSearch /></button>
           </div>
 
+          {/* Vamos a modificar el div 'header-icons' */}
+
           <div className="header-icons">
+            <a href="https://wa.me/TUNUMERODEWHATSAPP" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
+            <Link to="/account" aria-label="Mi Cuenta"><FaUserCircle /></Link>
+            
+            {/* 3. Icono del Carrito/Pedido con contador */}
+            <button className="cart-icon-btn" aria-label="Mi Pedido">
+              <FaShoppingBag />
+              {items.length > 0 && (
+                <span className="cart-count">{items.length}</span>
+              )}
+            </button>
+          </div>
+
+          {/* <div className="header-icons">
             <Link to="/account" aria-label="Mi Cuenta"><FaUserCircle /></Link>
             <Link to="/wishlist" aria-label="Lista de Deseos"><FaHeart /></Link>
             <Link to="/cart" aria-label="Carrito de Compras"><FaShoppingCart /></Link>
-          </div>
+          </div> */}
         </div>
       </div>
 
