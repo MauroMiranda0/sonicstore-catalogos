@@ -18,6 +18,10 @@
   color: inherit;
 }
 
+.catalog-link:hover{
+  text-decoration: none;
+}
+
 .catalog-card {
   background-color: #fff;
   border-radius: 16px; /* Bordes más redondeados */
@@ -61,7 +65,6 @@
   line-height: 1.5;
   flex-grow: 1; /* Otro truco para empujar el botón hacia abajo */
 }
-
 /* --- Botón de la Tarjeta --- */
 .card-button {
   background-color: var(--primary-color);
@@ -78,6 +81,7 @@
 .catalog-card:hover {
   transform: translateY(-8px); /* Eleva la tarjeta */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  
 }
 
 .catalog-card:hover img {
