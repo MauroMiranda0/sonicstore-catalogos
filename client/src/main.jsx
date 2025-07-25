@@ -60,6 +60,10 @@ const router = createBrowserRouter([
         path: 'account',
         element: <Account />,
       },
+      {
+        path: '*',
+        element: <NotFound />,
+      },
     ],
   },
 ]);
