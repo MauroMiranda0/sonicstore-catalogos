@@ -4,14 +4,15 @@ import useCartStore from '../stores/cartStore';
 import { FaTimes, FaTrash } from 'react-icons/fa';
 import './OrderPanel.css';
 
+
+
 function OrderPanel({ isOpen, onClose }) {
   // 1. Obtenemos el estado y las acciones que necesitamos del store
-  const { items, removeProduct, updateQuantity, clearCart } = useCartStore((state) => ({
-    items: state.items,
-    removeProduct: state.removeProduct,
-    updateQuantity: state.updateQuantity,
-    clearCart: state.clearCart,
-  }));
+  const items = useCartStore(state => state.items);
+const removeProduct = useCartStore(state => state.removeProduct);
+const updateQuantity = useCartStore(state => state.updateQuantity);
+const clearCart = useCartStore(state => state.clearCart);
+
 
   // 2. Función para generar y abrir el enlace de WhatsApp
   const handleSendOrder = () => {
@@ -27,7 +28,7 @@ function OrderPanel({ isOpen, onClose }) {
 
     // Codificamos el mensaje para que sea seguro en una URL
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/TUNUMERODEWHATSAPP?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/527712415122?text=${encodedMessage}`;
     
     // Abrimos WhatsApp en una nueva pestaña
     window.open(whatsappUrl, '_blank');
