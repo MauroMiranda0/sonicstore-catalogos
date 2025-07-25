@@ -1,19 +1,31 @@
 // client/src/App.jsx
+import React, { useState } from 'react'; // 1. Importa useState
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
-import Footer from './components/Footer'; // 1. Importa el nuevo componente
-import FloatingButton from './components/FloatingButton'; // Importa el botón flotante
+import Footer from './components/Footer';
+import FloatingButton from './components/FloatingButton';
+import OrderPanel from './components/OrderPanel'; // 2. Importa el panel
+
 import './App.css';
 
 function App() {
+  // 3. Estado para controlar la visibilidad del panel
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
+
   return (
-    <div className="app-wrapper"> {/* Añadimos un wrapper para el sticky footer */}
-      <Header />
-      <main className="main-content">
+    <div>
+      {/* 4. Pasa la función para abrir el panel al Header */}
+      <Header onCartClick={() => setIsPanelOpen(true)} />
+      
+      <main className="container">
         <Outlet />
       </main>
-      <Footer /> {/* 2. Reemplaza el footer antiguo */}
-      <FloatingButton /> {/* Añade el botón aquí */}
+      
+      <Footer />
+      <FloatingButton />
+      
+      {/* 5. Renderiza el panel y le pasa el estado y la función para cerrarlo */}
+      <OrderPanel isOpen={isPanelOpen} onClose={() => setIsPanelOpen(false)} />
     </div>
   );
 }
