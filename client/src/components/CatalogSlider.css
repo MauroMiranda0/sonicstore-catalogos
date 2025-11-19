@@ -153,3 +153,41 @@
 .catalog-swiper .swiper-pagination-bullet-active {
     background-color: var(--primary-color);
 }
+
+@media (max-width: 1024px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .slider-card-content {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-swiper {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    .slider-nav-buttons {
+        justify-content: flex-start;
+    }
+    .custom-prev-btn,
+    .custom-next-btn {
+        width: 36px;
+        height: 36px;
+    }
+    .slider-card-content h3 {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .catalog-slider-section {
+        padding: 3rem 0;
+    }
+    .slider-nav-buttons {
+        display: none;
+    }
+}

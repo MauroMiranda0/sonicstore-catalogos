@@ -88,3 +88,39 @@
     line-height: 1.6;
     margin-bottom: 0;
 }
+
+@media (max-width: 900px) {
+    .page-header-alt h1 {
+        font-size: 2.6rem;
+    }
+    .steps-timeline {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .steps-timeline {
+        border-left: none;
+        padding-left: 0;
+    }
+    .step-item {
+        margin-left: 0;
+        padding-left: 3.5rem;
+    }
+    .step-icon-wrapper {
+        left: 0.5rem;
+        transform: none;
+    }
+    .step-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .page-header-alt h1 {
+        font-size: 2.1rem;
+    }
+    .step-content {
+        padding: 1.25rem;
+    }
+}

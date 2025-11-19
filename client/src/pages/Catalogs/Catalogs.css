@@ -91,3 +91,22 @@
 .catalog-card:hover .card-button {
   background-color: var(--secondary-color);
 }
+
+@media (max-width: 720px) {
+  .catalogs-page h2 {
+    font-size: 1.7rem;
+  }
+  .catalogs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .catalogs-page h2 {
+    font-size: 1.5rem;
+  }
+  .catalogs-grid {
+    grid-template-columns: 1fr;
+  }
+}

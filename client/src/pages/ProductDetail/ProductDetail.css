@@ -88,3 +88,31 @@
   background-color: var(--primary-color);
   color: white;
 }
+
+@media (max-width: 1024px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .product-info-details .product-title-detail {
+    font-size: 2.1rem;
+  }
+  .product-info-details .product-price-detail {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-detail-page {
+    padding: 1.5rem 0;
+  }
+  .product-info-details .product-title-detail {
+    font-size: 1.8rem;
+  }
+  .product-info-details .product-price-detail {
+    font-size: 1.5rem;
+  }
+  .breadcrumb {
+    font-size: 0.85rem;
+  }
+}

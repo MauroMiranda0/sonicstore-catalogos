@@ -17,7 +17,7 @@
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
 }
 
@@ -68,4 +68,17 @@
   line-height: 1.7;
   color: #555;
   font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .testimonials-page h2 {
+    font-size: 2rem;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .testimonial-card {
+    padding: 1.5rem;
+  }
 }

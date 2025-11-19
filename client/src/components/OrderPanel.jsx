@@ -28,7 +28,7 @@ const clearCart = useCartStore(state => state.clearCart);
 
     // Codificamos el mensaje para que sea seguro en una URL
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/527712415122?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/527712650312?text=${encodedMessage}`;
     
     // Abrimos WhatsApp en una nueva pestaña
     window.open(whatsappUrl, '_blank');

@@ -6,7 +6,7 @@
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
 }
 
@@ -49,4 +49,13 @@
 
 .grid-item:hover .image-overlay {
     opacity: 1;
+}
+
+@media (max-width: 640px) {
+    .gallery-section {
+        padding: 3rem 0;
+    }
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
 }

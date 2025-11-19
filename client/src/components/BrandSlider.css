@@ -76,3 +76,36 @@
 .slider-track:hover {
     animation-play-state: paused;
 }
+
+@media (max-width: 900px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .slider-track {
+        width: calc((120px + 40px) * 20);
+    }
+    .brand-slide {
+        width: 120px;
+        margin: 0 20px;
+    }
+    .brand-slide img {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .brands-section {
+        padding: 3rem 0;
+    }
+    .slider-track {
+        width: calc((100px + 32px) * 20);
+        animation-duration: 50s;
+    }
+    .brand-slide {
+        width: 100px;
+        margin: 0 16px;
+    }
+    .brand-slide img {
+        max-width: 84px;
+    }
+}
