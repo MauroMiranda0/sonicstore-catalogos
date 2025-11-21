@@ -1,50 +1,79 @@
 // client/src/hooks/useFetch.js
 import { useState, useEffect } from 'react';
+import { catalogs, testimonials, products } from '../data/mockData';
+
+const resolveEndpoint = (endpoint) => {
+  const [basePath, searchParams] = endpoint.split('?');
+
+  if (basePath === '/api/catalogs') {
+    return catalogs;
+  }
+
+  if (basePath === '/api/testimonials') {
+    return testimonials;
+  }
+
+  if (basePath === '/api/products') {
+    if (searchParams?.includes('featured=true')) {
+      return products.filter(product => product.featured);
+    }
+    return products;
+  }
+
+  if (basePath.startsWith('/api/catalogs/')) {
+    const id = Number(basePath.replace('/api/catalogs/', ''));
+    const catalog = catalogs.find(item => item.id === id);
+    if (!catalog) {
+      throw new Error('Catalogo no encontrado');
+    }
+    return catalog;
+  }
+
+  if (basePath.startsWith('/api/products/')) {
+    const id = Number(basePath.replace('/api/products/', ''));
+    const product = products.find(item => item.id === id);
+    if (!product) {
+      throw new Error('Producto no encontrado');
+    }
+    return product;
+  }
+
+  throw new Error(`Endpoint no soportado: ${endpoint}`);
+};
 
 function useFetch(url) {
-  // Aquí movemos toda la lógica de estado que se repetía
-  const [data, setData] = useState(null); // Empezamos con null, es más semántico
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Usamos una función abortController para limpiar el efecto si el componente se desmonta
-    // Esto previene errores de "state update on an unmounted component"
-    const abortController = new AbortController();
-
-    // Reiniciamos los estados al empezar una nueva petición (útil si la URL cambia)
+    let isActive = true;
     setLoading(true);
     setError(null);
 
-    fetch(url, { signal: abortController.signal })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`Error HTTP: ${response.status}`);
+    const timer = setTimeout(() => {
+      try {
+        const responseData = resolveEndpoint(url);
+        if (isActive) {
+          setData(responseData);
         }
-        return response.json();
-      })
-      .then(data => {
-        setData(data);
-      })
-      .catch(error => {
-        if (error.name === 'AbortError') {
-          console.log('Fetch abortado');
-        } else {
-          setError(error);
+      } catch (err) {
+        if (isActive) {
+          setError(err);
         }
-      })
-      .finally(() => {
-        // finally() se ejecuta siempre, ya sea éxito o error. Perfecto para el loading.
-        setLoading(false);
-      });
+      } finally {
+        if (isActive) {
+          setLoading(false);
+        }
+      }
+    }, 200);
 
-    // Función de limpieza del useEffect
-    // Se ejecuta cuando el componente se desmonta o antes de que el efecto se re-ejecute
-    return () => abortController.abort();
+    return () => {
+      isActive = false;
+      clearTimeout(timer);
+    };
+  }, [url]);
 
-  }, [url]); // El efecto se re-ejecutará si la URL cambia
-
-  // El hook devuelve el estado actual para que el componente lo pueda usar
   return { data, loading, error };
 }
 
