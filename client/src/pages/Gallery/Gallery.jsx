@@ -6,8 +6,9 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 import './Gallery.css';
+import useCartStore from '../../stores/cartStore';
 
-// Importa tus imágenes
+// Importa tus imagenes
 import img1 from '../../assets/gallery/gallery1.jpg';
 import img2 from '../../assets/gallery/gallery2.jpg';
 import img3 from '../../assets/gallery/gallery3.jpg';
@@ -19,28 +20,47 @@ import img8 from '../../assets/gallery/gallery8.jpg';
 import img9 from '../../assets/gallery/gallery9.jpg';
 
 const images = [
-  { src: img1, alt: 'Imagen de galería 1' },
-  { src: img2, alt: 'Imagen de galería 2' },
-  { src: img3, alt: 'Imagen de galería 3' },
-  { src: img4, alt: 'Imagen de galería 4' },
-  { src: img5, alt: 'Imagen de galería 5' },
-  { src: img6, alt: 'Imagen de galería 6' },
-  { src: img7, alt: 'Imagen de galería 7' },
-  { src: img8, alt: 'Imagen de galería 8' },
-  { src: img9, alt: 'Imagen de galería 9' },
+  { src: img1, alt: 'Imagen de galeria 1', title: 'Look urbano relajado', price: '$89', sku: 'SKU-1001', features: ['Algodon suave', 'Jeans stretch', 'Capucha forrada'] },
+  { src: img2, alt: 'Imagen de galeria 2', title: 'Athleisure neutro', price: '$75', sku: 'SKU-1002', features: ['Tenis transpirables', 'Joggers con ajuste', 'Secado rapido'] },
+  { src: img3, alt: 'Imagen de galeria 3', title: 'Denim con capas', price: '$98', sku: 'SKU-1003', features: ['Corte relajado', 'Bolsillos funcionales', 'Tela resistente'] },
+  { src: img4, alt: 'Imagen de galeria 4', title: 'Basicos monocromos', price: '$65', sku: 'SKU-1004', features: ['Algodon organico', 'Costuras reforzadas', 'Ajuste regular'] },
+  { src: img5, alt: 'Imagen de galeria 5', title: 'Oficina moderna', price: '$120', sku: 'SKU-1005', features: ['Forro suave', 'Botonadura clasica', 'Tiro medio'] },
+  { src: img6, alt: 'Imagen de galeria 6', title: 'Weekend minimal', price: '$72', sku: 'SKU-1006', features: ['Tejido fresco', 'Sneakers livianos', 'Tono versatil'] },
+  { src: img7, alt: 'Imagen de galeria 7', title: 'Elegancia casual', price: '$110', sku: 'SKU-1007', features: ['Ajuste fluido', 'Cinturon incluido', 'Botones nacarados'] },
+  { src: img8, alt: 'Imagen de galeria 8', title: 'Color block suave', price: '$95', sku: 'SKU-1008', features: ['Tela respirable', 'Costuras planas', 'Corte relajado'] },
+  { src: img9, alt: 'Imagen de galeria 9', title: 'Street chic', price: '$130', sku: 'SKU-1009', features: ['Capucha desmontable', 'Bolsillos con zipper', 'Repelente al agua'] },
 ];
 
 function Gallery() {
-  // 2. Estado para manejar el lightbox
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
+  const [feedback, setFeedback] = useState('');
+  const addProduct = useCartStore((state) => state.addProduct);
+
+  const handleSelect = (i) => {
+    setIndex(i);
+    setOpen(true);
+    setFeedback('');
+  };
+
+  const handleAddToCart = (slide) => {
+    if (!slide) return;
+    addProduct({
+      name: slide.title || slide.alt,
+      sku: slide.sku,
+      price: slide.price,
+      quantity: 1,
+      image: slide.src,
+    });
+    setFeedback(`${slide.title || 'Producto'} agregado a la bolsa`);
+  };
 
   return (
     <div className="gallery-page">
       <header className="page-header-alt">
         <div className="container">
-          <h1>Galería de Estilos</h1>
-          <p className="page-subtitle">Inspírate con nuestra comunidad y descubre cómo combinar nuestros productos.</p>
+          <h1>Galeria de Estilos</h1>
+          <p className="page-subtitle">Inspirate con nuestra comunidad y descubre como combinar nuestros productos.</p>
         </div>
       </header>
 
@@ -51,10 +71,7 @@ function Gallery() {
               <div 
                 className="grid-item" 
                 key={i} 
-                onClick={() => {
-                  setIndex(i); // Establece la imagen en la que se hizo clic
-                  setOpen(true); // Abre el lightbox
-                }}
+                onClick={() => handleSelect(i)}
               >
                 <img src={image.src} alt={image.alt} />
                 <div className="image-overlay">Ver</div>
@@ -64,12 +81,40 @@ function Gallery() {
         </div>
       </section>
 
-      {/* 3. Componente Lightbox */}
+      {/* Componente Lightbox */}
       <Lightbox
         open={open}
-        close={() => setOpen(false)}
+        close={() => {
+          setOpen(false);
+          setFeedback('');
+        }}
         slides={images}
         index={index}
+        render={{
+          slide: ({ slide }) => (
+            <div className="lightbox-frame">
+              <img src={slide.src} alt={slide.alt} className="lightbox-image" />
+              <div className="lightbox-overlay">
+                <div className="lightbox-meta">
+                  <div>
+                    <h3>{slide.title}</h3>
+                    {slide.sku && <p className="lightbox-sku">SKU: {slide.sku}</p>}
+                  </div>
+                  <span className="lightbox-price">{slide.price}</span>
+                </div>
+                <ul className="lightbox-features">
+                  {slide.features?.map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+                <button className="lightbox-add-btn" onClick={() => handleAddToCart(slide)}>
+                  Agregar a la bolsa
+                </button>
+                {feedback && <div className="lightbox-feedback">{feedback}</div>}
+              </div>
+            </div>
+          )
+        }}
       />
     </div>
   );

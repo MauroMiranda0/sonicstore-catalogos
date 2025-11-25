@@ -21,15 +21,15 @@ import product3 from '../assets/product-3.jpg';
 import product4 from '../assets/product-4.jpg';
 
 export const catalogs = [
-  { id: 1, name: 'Zapatos Deportivos', description: 'Calzado comodo y moderno para entrenamiento y uso diario.', image: catalogImg01 },
-  { id: 2, name: 'Zapatos Elegantes', description: 'Estilo y sofisticacion para ocasiones especiales.', image: catalogImg02 },
-  { id: 3, name: 'Maquillaje Natural', description: 'Productos suaves para un look fresco y diario.', image: catalogImg03 },
-  { id: 4, name: 'Maquillaje Profesional', description: 'Alta cobertura y larga duracion para eventos y sesiones.', image: catalogImg04 },
-  { id: 5, name: 'Ropa Casual', description: 'Moda relajada y comoda para el dia a dia.', image: catalogImg05 },
-  { id: 6, name: 'Ropa Formal', description: 'Prendas elegantes ideales para oficina o eventos.', image: catalogImg06 },
-  { id: 7, name: 'Decoracion de Hogar', description: 'Articulos decorativos para transformar tus espacios.', image: catalogImg07 },
-  { id: 8, name: 'Electrodomesticos', description: 'Soluciones practicas para tu cocina y limpieza.', image: catalogImg08 },
-  { id: 9, name: 'Ropa de Cama', description: 'Sabanas, edredones y almohadas para un descanso comodo.', image: catalogImg09 },
+  { id: 1, name: 'Natura', description: 'Calzado comodo y moderno para entrenamiento y uso diario.', image: catalogImg01, catalogUrl: 'https://www.natura.com.mx/' },
+  { id: 2, name: 'Zapatos Elegantes', description: 'Estilo y sofisticacion para ocasiones especiales.', image: catalogImg02, catalogUrl: 'https://ejemplo.com/catalogos/zapatos-elegantes' },
+  { id: 3, name: 'Maquillaje Natural', description: 'Productos suaves para un look fresco y diario.', image: catalogImg03, catalogUrl: 'https://ejemplo.com/catalogos/maquillaje-natural' },
+  { id: 4, name: 'Maquillaje Profesional', description: 'Alta cobertura y larga duracion para eventos y sesiones.', image: catalogImg04, catalogUrl: 'https://ejemplo.com/catalogos/maquillaje-profesional' },
+  { id: 5, name: 'Ropa Casual', description: 'Moda relajada y comoda para el dia a dia.', image: catalogImg05, catalogUrl: 'https://ejemplo.com/catalogos/ropa-casual' },
+  { id: 6, name: 'Ropa Formal', description: 'Prendas elegantes ideales para oficina o eventos.', image: catalogImg06, catalogUrl: 'https://ejemplo.com/catalogos/ropa-formal' },
+  { id: 7, name: 'Decoracion de Hogar', description: 'Articulos decorativos para transformar tus espacios.', image: catalogImg07, catalogUrl: 'https://ejemplo.com/catalogos/decoracion-hogar' },
+  { id: 8, name: 'Electrodomesticos', description: 'Soluciones practicas para tu cocina y limpieza.', image: catalogImg08, catalogUrl: 'https://ejemplo.com/catalogos/electrodomesticos' },
+  { id: 9, name: 'Ropa de Cama', description: 'Sabanas, edredones y almohadas para un descanso comodo.', image: catalogImg09, catalogUrl: 'https://ejemplo.com/catalogos/ropa-de-cama' },
 ];
 
 export const testimonials = [
