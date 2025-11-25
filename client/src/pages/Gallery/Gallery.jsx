@@ -8,35 +8,19 @@ import "yet-another-react-lightbox/styles.css";
 import './Gallery.css';
 import useCartStore from '../../stores/cartStore';
 import { FaCheckCircle } from 'react-icons/fa';
-
-// Importa tus imagenes
-import img1 from '../../assets/gallery/gallery1.jpg';
-import img2 from '../../assets/gallery/gallery2.jpg';
-import img3 from '../../assets/gallery/gallery3.jpg';
-import img4 from '../../assets/gallery/gallery4.jpg';
-import img5 from '../../assets/gallery/gallery5.jpg';
-import img6 from '../../assets/gallery/gallery6.jpg';
-import img7 from '../../assets/gallery/gallery7.jpg';
-import img8 from '../../assets/gallery/gallery8.jpg';
-import img9 from '../../assets/gallery/gallery9.jpg';
-
-const images = [
-  { src: img1, alt: 'Imagen de galeria 1', title: 'Look urbano relajado', price: '$89', sku: 'SKU-1001', description: 'Sudadera ligera y denim clasico listos para el dia a dia.', features: ['Algodon suave', 'Jeans stretch', 'Capucha forrada'] },
-  { src: img2, alt: 'Imagen de galeria 2', title: 'Athleisure neutro', price: '$75', sku: 'SKU-1002', description: 'Mezcla deportiva en tonos tierra para transiciones rapidas.', features: ['Tenis transpirables', 'Joggers con ajuste', 'Secado rapido'] },
-  { src: img3, alt: 'Imagen de galeria 3', title: 'Denim con capas', price: '$98', sku: 'SKU-1003', description: 'Camisa utilitaria sobre basicos, ideal para media estacion.', features: ['Corte relajado', 'Bolsillos funcionales', 'Tela resistente'] },
-  { src: img4, alt: 'Imagen de galeria 4', title: 'Basicos monocromos', price: '$65', sku: 'SKU-1004', description: 'Playera y pantalon monocromo listos para combinar.', features: ['Algodon organico', 'Costuras reforzadas', 'Ajuste regular'] },
-  { src: img5, alt: 'Imagen de galeria 5', title: 'Oficina moderna', price: '$120', sku: 'SKU-1005', description: 'Blazer estructurado con pantalon slim para juntas clave.', features: ['Forro suave', 'Botonadura clasica', 'Tiro medio'] },
-  { src: img6, alt: 'Imagen de galeria 6', title: 'Weekend minimal', price: '$72', sku: 'SKU-1006', description: 'Conjunto liviano perfecto para escapadas de fin de semana.', features: ['Tejido fresco', 'Sneakers livianos', 'Tono versatil'] },
-  { src: img7, alt: 'Imagen de galeria 7', title: 'Elegancia casual', price: '$110', sku: 'SKU-1007', description: 'Vestido camisero con accesorios metalicos sutiles.', features: ['Ajuste fluido', 'Cinturon incluido', 'Botones nacarados'] },
-  { src: img8, alt: 'Imagen de galeria 8', title: 'Color block suave', price: '$95', sku: 'SKU-1008', description: 'Combinacion pastel para dias soleados y ligeros.', features: ['Tela respirable', 'Costuras planas', 'Corte relajado'] },
-  { src: img9, alt: 'Imagen de galeria 9', title: 'Street chic', price: '$130', sku: 'SKU-1009', description: 'Abrigo ligero con acentos negros y base neutra.', features: ['Capucha desmontable', 'Bolsillos con zipper', 'Repelente al agua'] },
-];
+import { images } from '../../data/mockData';
 
 function Gallery() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
   const [feedback, setFeedback] = useState('');
+  const [page, setPage] = useState(1);
+  const pageSize = 12;
+  const totalPages = Math.max(1, Math.ceil(images.length / pageSize));
   const addProduct = useCartStore((state) => state.addProduct);
+
+  const start = (page - 1) * pageSize;
+  const paginatedImages = images.slice(start, start + pageSize);
 
   const handleSelect = (i) => {
     setIndex(i);
@@ -56,6 +40,15 @@ function Gallery() {
     setFeedback(`${slide.title || 'Producto'} agregado a la bolsa`);
   };
 
+  const handlePageChange = (nextPage) => {
+    const safePage = Math.min(Math.max(nextPage, 1), totalPages);
+    if (safePage === page) return;
+    setPage(safePage);
+    setOpen(false);
+    setIndex(0);
+    setFeedback('');
+  };
+
   return (
     <div className="gallery-page">
       <header className="page-header-alt">
@@ -68,7 +61,7 @@ function Gallery() {
       <section className="gallery-section">
         <div className="container">
           <div className="image-grid">
-            {images.map((image, i) => (
+            {paginatedImages.map((image, i) => (
               <div
                 className="grid-item"
                 key={i}
@@ -78,6 +71,28 @@ function Gallery() {
                 <div className="image-overlay">Ver</div>
               </div>
             ))}
+          </div>
+
+          <div className="gallery-pagination">
+            <button
+              type="button"
+              className="page-btn"
+              onClick={() => handlePageChange(page - 1)}
+              disabled={page === 1}
+            >
+              Anterior
+            </button>
+            <span className="page-status">
+              Pagina {page} de {totalPages}
+            </span>
+            <button
+              type="button"
+              className="page-btn"
+              onClick={() => handlePageChange(page + 1)}
+              disabled={page === totalPages}
+            >
+              Siguiente
+            </button>
           </div>
         </div>
       </section>
@@ -89,8 +104,14 @@ function Gallery() {
           setOpen(false);
           setFeedback('');
         }}
-        slides={images}
+        slides={paginatedImages}
         index={index}
+        on={{
+          view: ({ index: nextIndex }) => {
+            setIndex(nextIndex);
+            setFeedback('');
+          }
+        }}
         render={{
           slide: ({ slide }) => (
             <div className="lightbox-frame">
