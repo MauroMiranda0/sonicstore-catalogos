@@ -1,0 +1,41 @@
+/* client/src/pages/AddProduct/AddProduct.css */
+
+.add-product-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: #f8fafc;
+}
+
+.add-product-card {
+  width: min(640px, 100%);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  padding: 1.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.add-product-card h1 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.6rem;
+}
+
+.add-product-subtitle {
+  margin: 0 0 1rem 0;
+  color: #4b5563;
+}
+
+.add-product-feedback {
+  margin-top: 1rem;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .add-product-card {
+    padding: 1.25rem;
+  }
+}

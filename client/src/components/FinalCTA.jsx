@@ -13,9 +13,9 @@ function FinalCTA() {
             <img src={ctaImage} alt="Nuevos productos" />
           </div>
           <div className="cta-text">
-            <h2>¿Ya conoces nuestros productos nuevos?</h2>
-            <p>La última moda y los mejores artículos para tu hogar te están esperando.</p>
-            <Link to="/products" className="cta-button">Ver catálogo ahora</Link>
+            <h2>Haz tu primer pedido y recibe un regalo</h2>
+            <p>Arma tu pedido hoy, te bonificamos con un detalle especial en tu primera compra.</p>
+            <Link to="/contact" className="cta-button">Quiero mi regalo</Link>
           </div>
         </div>
       </div>

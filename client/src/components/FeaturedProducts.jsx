@@ -1,12 +1,46 @@
 // client/src/components/FeaturedProducts.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useFetch from '../hooks/useFetch';
-import ProductCard from './ProductCard';
 import './FeaturedProducts.css';
+import logo from '../assets/logo.png';
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import { FaCheckCircle } from 'react-icons/fa';
+import useCartStore from '../stores/cartStore';
+import { images as galleryImages } from '../data/mockData';
 
 function FeaturedProducts() {
-  const { data: products, loading, error } = useFetch('/api/products?featured=true');
+  const products = galleryImages.slice(-10);
+  const [open, setOpen] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [feedback, setFeedback] = useState('');
+  const addProduct = useCartStore((state) => state.addProduct);
+
+  const slides = products?.map((product) => ({
+    src: product.src,
+    alt: product.alt,
+    title: product.title,
+    sku: product.sku,
+    features: ['Calidad garantizada', 'Entrega rapida', 'Pago seguro'],
+  })) || [];
+
+  const handleSelect = (i) => {
+    setIndex(i);
+    setOpen(true);
+    setFeedback('');
+  };
+
+  const handleAddToCart = (slide) => {
+    if (!slide) return;
+    addProduct({
+      name: slide.title || slide.alt,
+      sku: slide.sku,
+      price: slide.price,
+      quantity: 1,
+      image: slide.src,
+    });
+    setFeedback(`${slide.title || 'Producto'} agregado a la bolsa`);
+  };
 
   return (
     <section className="featured-products-section">
@@ -14,15 +48,65 @@ function FeaturedProducts() {
         <h2>Nuevos Productos</h2>
         <Link to="/catalogs" className="see-all-link">Ver Catalogos</Link>
       </div>
-      
-      {loading && <div>Loading products...</div>}
-      {error && <div>Error: {error.message}</div>}
-      
+
       <div className="products-grid">
-        {products && products.map(product => (
-          <ProductCard key={product.id} product={product} />
+        {products && products.map((product, i) => (
+          <div className="grid-item" key={product.sku || product.title} onClick={() => handleSelect(i)}>
+            <div className="grid-image">
+              <img src={product.src} alt={product.alt} />
+              <div className="image-overlay">Ver</div>
+            </div>
+            <div className="grid-info">
+              <p className="grid-title">{product.title}</p>
+              <img src={logo} alt="SonicStore" className="grid-logo" />
+            </div>
+          </div>
         ))}
       </div>
+
+      <Lightbox
+        open={open}
+        close={() => {
+          setOpen(false);
+          setFeedback('');
+        }}
+        slides={slides}
+        index={index}
+        on={{
+          view: ({ index: nextIndex }) => {
+            setIndex(nextIndex);
+            setFeedback('');
+          }
+        }}
+        render={{
+          slide: ({ slide }) => (
+            <div className="lightbox-frame">
+              <img src={slide.src} alt={slide.alt} className="lightbox-image" />
+              <div className="lightbox-overlay">
+                <div className="lightbox-meta">
+                  <div>
+                    <h3>{slide.title}</h3>
+                    {slide.sku && <p className="lightbox-sku">SKU: {slide.sku}</p>}
+                  </div>
+                  <span className="lightbox-price">{slide.price}</span>
+                </div>
+                <ul className="lightbox-features">
+                  {slide.features?.map((feature) => (
+                    <li key={feature}>
+                      <FaCheckCircle className="feature-icon" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <button className="lightbox-add-btn" onClick={() => handleAddToCart(slide)}>
+                  Agregar a la bolsa
+                </button>
+                {feedback && <div className="lightbox-feedback">{feedback}</div>}
+              </div>
+            </div>
+          )
+        }}
+      />
     </section>
   );
 }

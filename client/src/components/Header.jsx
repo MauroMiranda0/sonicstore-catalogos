@@ -29,7 +29,7 @@ function Header({ onCartClick }) {
 
           <div className="header-icons">
             <a
-              href="https://wa.me/TUNUMERODEWHATSAPP"
+              href="https://wa.me/7712650312"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"

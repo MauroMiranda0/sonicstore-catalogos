@@ -1,6 +1,6 @@
 // client/src/components/HowToBuyContent.jsx
 import React from 'react';
-import { FaSearch, FaMousePointer, FaShoppingCart, FaCreditCard, FaBoxOpen } from 'react-icons/fa';
+import { FaSearch, FaMousePointer, FaShoppingBag, FaCreditCard, FaBoxOpen } from 'react-icons/fa';
 // ¡Importante! Mueve los estilos de HowToBuy.css a este nuevo componente si quieres, 
 // o crea un archivo CSS específico para él. Para simplificar, los mantendremos separados.
 import '../pages/HowToBuy/HowToBuy.css'; 
@@ -17,14 +17,14 @@ const steps = [
     description: "Haz clic en los productos que te interesan para ver sus detalles, como tallas, colores disponibles y más fotos."
   },
   {
-    icon: <FaShoppingCart />,
-    title: "Paso 3: Añade al Carrito",
-    description: "Una vez que te decidas por un producto, haz clic en el botón 'Añadir al Carrito'. Puedes seguir comprando o proceder al pago."
+    icon: <FaShoppingBag />,
+    title: "Paso 3: Añade a tu bolsa de compras",
+    description: "Usa el botón de añadir en la ficha o el flotante con la bolsa para sumar productos. Si necesitas capturar un código, toca '+'' para abrir el formulario rápido."
   },
   {
     icon: <FaCreditCard />,
     title: "Paso 4: Proceso de Pago Seguro",
-    description: "Ve a tu carrito de compras y sigue las instrucciones para el pago. Usamos pasarelas de pago 100% seguras."
+    description: "Ve a tu bolsa de compras y sigue las instrucciones para el pago. Usamos pasarelas de pago 100% seguras."
   },
   {
     icon: <FaBoxOpen />,
@@ -37,8 +37,8 @@ function HowToBuyContent() {
   return (
     // Este div es opcional, pero ayuda a mantener la estructura
     <div className="how-to-buy-content">
-      <section className="steps-section" style={{ padding: 0 }}>
-        <div className="steps-timeline" style={{ border: 'none', marginLeft: 0 }}>
+      <section className="steps-section" style={{ padding: 20 }}>
+        <div className="steps-timeline" style={{ border: 'none', marginLeft: 20 }}>
           {steps.map((step, index) => (
             <div className="step-item" key={index} style={{ marginLeft: '2rem' }}>
               <div className="step-icon-wrapper">

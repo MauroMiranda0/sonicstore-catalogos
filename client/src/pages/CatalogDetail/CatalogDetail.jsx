@@ -13,6 +13,12 @@ function CatalogDetail() {
   // 4. Estado para el modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleViewCatalog = () => {
+    const url = catalog.catalogUrl || catalog.url || catalog.link || catalog.image;
+    if (!url) return;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   // ... (lógica de loading/error)
 
   if (loading) return <div>Cargando detalles del catálogo...</div>;
@@ -22,6 +28,9 @@ function CatalogDetail() {
   return (
     <>
       <div className="catalog-detail-page">
+        <div className="back-link">
+          <Link to="/catalogs">{'<'} Volver a catalogos</Link>
+        </div>
         {/* ... (contenido existente de la página) ... */}
         <div className="detail-content">
           <img src={catalog.image} alt={catalog.name} />
@@ -29,7 +38,7 @@ function CatalogDetail() {
             <h1>{catalog.name}</h1>
             <p>{catalog.description}</p>
             <div className="catalog-actions">
-              <button className="view-catalog-btn">Ver Catálogo Completo</button>
+              <button className="view-catalog-btn" onClick={handleViewCatalog}>Ver Catálogo Completo</button>
               {/* 5. Botón para añadir producto manualmente */}
               <button className="add-to-order-btn" onClick={() => setIsModalOpen(true)}>
                 Añadir Producto de este Catálogo

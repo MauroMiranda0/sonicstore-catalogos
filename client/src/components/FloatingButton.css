@@ -23,6 +23,11 @@
   transform: scale(1.1);
 }
 
+.floating-btn.secondary {
+  bottom: 95px;
+  background-color: #111827;
+}
+
 @media (max-width: 600px) {
   .floating-btn {
     width: 50px;
@@ -30,5 +35,8 @@
     bottom: 15px;
     right: 15px;
     font-size: 1.25rem;
+  }
+  .floating-btn.secondary {
+    bottom: 75px;
   }
 }

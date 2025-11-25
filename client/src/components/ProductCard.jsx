@@ -19,10 +19,6 @@ function ProductCard({ product }) {
           <img src={brandIcon} alt="brand" className="brand-icon" />
           <span className="product-name">{product.name}</span>
         </div>
-        <div className="product-meta">
-          <span className="product-price">${product.price.toFixed(2)}</span>
-          <span className="stock-code">Cod. 012345</span>
-        </div>
       </div>
     </div>
   );
