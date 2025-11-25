@@ -6,7 +6,7 @@ function Contact() {
   // 1. Estado para almacenar los datos de todos los campos del formulario
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
+    phone: '',
     message: '',
   });
   
@@ -31,7 +31,7 @@ function Contact() {
       // Simulamos una solicitud para evitar depender del backend
       await new Promise(resolve => setTimeout(resolve, 800));
       setSubmissionStatus('success');
-      setFormData({ name: '', email: '', message: '' }); // Limpia el formulario
+      setFormData({ name: '', phone: '', message: '' }); // Limpia el formulario
     } catch (error) {
       setSubmissionStatus('error');
       console.error('Error al enviar el formulario:', error);
@@ -56,13 +56,14 @@ function Contact() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="email">Correo Electrónico</label>
+          <label htmlFor="phone">Teléfono o WhatsApp</label>
           <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
             onChange={handleChange}
+            placeholder="+52 55 1234 5678"
             required
           />
         </div>
