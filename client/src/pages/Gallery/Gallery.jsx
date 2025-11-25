@@ -9,6 +9,7 @@ import './Gallery.css';
 import useCartStore from '../../stores/cartStore';
 import { FaCheckCircle } from 'react-icons/fa';
 import { images } from '../../data/mockData';
+import logo from '../../assets/logo.png';
 
 function Gallery() {
   const [open, setOpen] = useState(false);
@@ -67,8 +68,14 @@ function Gallery() {
                 key={i}
                 onClick={() => handleSelect(i)}
               >
-                <img src={image.src} alt={image.alt} />
-                <div className="image-overlay">Ver</div>
+                <div className="grid-image">
+                  <img src={image.src} alt={image.alt} />
+                  <div className="image-overlay">Ver</div>
+                </div>
+                <div className="grid-info">
+                  <p className="grid-title">{image.title}</p>
+                  <img src={logo} alt="SonicStore" className="grid-logo" />
+                </div>
               </div>
             ))}
           </div>

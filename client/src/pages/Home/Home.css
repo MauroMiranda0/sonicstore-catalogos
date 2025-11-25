@@ -3,7 +3,7 @@
 .hero-section-fullwidth {
   position: relative;
   width: 100%;
-  height: 85vh; /* Altura del Hero, ocupa el 85% de la ventana */
+  height: 70vh; /* Altura del Hero, ocupa el 85% de la ventana */
   color: #fff; /* Todo el texto dentro será blanco por defecto */
 }
 
