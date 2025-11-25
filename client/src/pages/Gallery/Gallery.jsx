@@ -87,7 +87,7 @@ function Gallery() {
               onClick={() => handlePageChange(page - 1)}
               disabled={page === 1}
             >
-              Anterior
+              &lt;
             </button>
             <span className="page-status">
               Pagina {page} de {totalPages}
@@ -98,7 +98,7 @@ function Gallery() {
               onClick={() => handlePageChange(page + 1)}
               disabled={page === totalPages}
             >
-              Siguiente
+              &gt;
             </button>
           </div>
         </div>
