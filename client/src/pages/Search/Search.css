@@ -1,0 +1,12 @@
+/* client/src/pages/Search/Search.css */
+.search-page {
+  padding: 2rem 0 3rem;
+}
+.search-query {
+  color: var(--muted-text);
+  margin-bottom: 1rem;
+}
+.search-empty {
+  color: var(--muted-text);
+  margin-top: 1rem;
+}
