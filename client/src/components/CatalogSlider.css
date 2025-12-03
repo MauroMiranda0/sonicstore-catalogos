@@ -42,10 +42,19 @@
 }
 
 .slider-card-link {
-    text-decoration: none;
     color: inherit;
     display: block;
     height: 100%;
+}
+
+.slider-card-link:hover {
+    text-decoration: none;
+    cursor:auto;
+}
+
+.slider-card-link h3:hover {
+    color: var(--secondary-color);
+    cursor: pointer;
 }
 
 .slider-catalog-card {

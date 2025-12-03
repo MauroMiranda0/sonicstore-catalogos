@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/logo.svg';
 
-import { FaWhatsapp, FaUserCircle, FaShoppingBag, FaSearch } from 'react-icons/fa';
+import { FaWhatsapp, FaUserCircle, FaShoppingBag, FaSearch, FaQuestionCircle } from 'react-icons/fa';
 import useCartStore from '../stores/cartStore';
 
 function Header({ onCartClick }) {
@@ -36,12 +36,13 @@ function Header({ onCartClick }) {
             >
               <FaWhatsapp />
             </a>
-            <Link to="/account" aria-label="Mi Cuenta"><FaUserCircle /></Link>
+            {/* <Link to="/account" aria-label="Mi Cuenta"><FaUserCircle /></Link> */}
 
             <button className="cart-icon-btn" aria-label="Mi Pedido" onClick={onCartClick} type="button">
               <FaShoppingBag />
               {items.length > 0 && <span className="cart-count">{items.length}</span>}
             </button>
+            <Link to="/how-to-buy" aria-label="¿Cómo comprar?"><FaQuestionCircle /></Link>
 
             <button
               className="menu-toggle"
