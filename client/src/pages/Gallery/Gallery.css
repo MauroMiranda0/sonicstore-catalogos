@@ -15,8 +15,8 @@
     overflow: hidden;
     border-radius: 12px;
     cursor: pointer;
-    background: #fff;
-    border: 1px solid #e5e7eb;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     display: flex;
@@ -28,7 +28,7 @@
     position: relative;
     aspect-ratio: 1 / 1.05;
     overflow: hidden;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .grid-image img {
@@ -119,8 +119,8 @@
 }
 
 .page-btn:disabled {
-    background: #e5e7eb;
-    color: #9ca3af;
+    background: var(--border-color);
+    color: var(--muted-text);
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
@@ -128,7 +128,7 @@
 
 .page-status {
     font-weight: 600;
-    color: #111827;
+    color: var(--text-heading);
 }
 
 .lightbox-frame {
@@ -247,3 +247,4 @@
         max-height: 82vh;
     }
 }
+

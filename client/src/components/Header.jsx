@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.svg';
 
 import { FaWhatsapp, FaUserCircle, FaShoppingBag, FaSearch } from 'react-icons/fa';
 import useCartStore from '../stores/cartStore';

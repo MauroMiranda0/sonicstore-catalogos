@@ -2,7 +2,7 @@
 
 .benefits-section {
     padding: 4rem 0;
-    background-color: #fff;
+    background-color: var(--surface-color);
 }
 
 .benefits-grid {
@@ -30,7 +30,7 @@
 
 .benefit-text {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--muted-text);
 }
 
 

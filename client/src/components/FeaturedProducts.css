@@ -32,8 +32,8 @@
   overflow: hidden;
   border-radius: 12px;
   cursor: pointer;
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
@@ -50,8 +50,8 @@
   position: relative;
   aspect-ratio: 1 / 1.05;
   overflow: hidden;
-  border-bottom: 1px solid #e5e7eb;
-  background: #fff;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--surface-color);
 }
 
 .grid-image img {
@@ -119,3 +119,4 @@
     gap: 0.5rem;
   }
 }
+

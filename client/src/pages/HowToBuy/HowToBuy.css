@@ -13,7 +13,7 @@
 
 .page-header-alt .page-subtitle {
     font-size: 1.2rem;
-    color: #666;
+    color: var(--muted-text);
     max-width: 600px;
     margin: 0.5rem auto 0 auto;
 }
@@ -50,7 +50,7 @@
     /* Alinear con el borde de la timeline */
     transform: translateX(-50%);
     /* Centrar el ícono sobre la línea */
-    background-color: #fff;
+    background-color: var(--surface-color);
     padding: 0.5rem;
 }
 
@@ -64,12 +64,12 @@
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    box-shadow: 0 0 0 5px #fff;
+    box-shadow: 0 0 0 5px var(--surface-color);
     /* Anillo blanco para separar de la línea */
 }
 
 .step-content {
-    background-color: #fff;
+    background-color: var(--surface-color);
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -84,7 +84,7 @@
 }
 
 .step-content p {
-    color: #555;
+    color: var(--muted-text);
     line-height: 1.6;
     margin-bottom: 0;
 }
@@ -124,3 +124,4 @@
         padding: 1.25rem;
     }
 }
+

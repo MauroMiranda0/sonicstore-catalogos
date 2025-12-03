@@ -6,13 +6,18 @@
 
 /* 2. DEFINICIÓN DE VARIABLES DE COLOR */
 :root {
-  --primary-color: #EE4540;
-  --secondary-color: #C72C41;
-  --text-heading: #801336;
-  --background-dark: #2D142C;
-  --background-deep: #510A32;
-  --light-bg: #FFF8F7;
-  --text-main: #333;
+  --primary-color: #c12e63;
+  --secondary-color: #f0783c;
+  --accent-color: #8f1f48;
+  --text-heading: #2d1220;
+  --text-main: #2f1b25;
+  --muted-text: #6c5562;
+  --background-dark: #1f0f18;
+  --background-deep: #2b1423;
+  --light-bg: #f9f3f0;
+  --surface-color: #ffffff;
+  --border-color: #edd6cd;
+  --primary-gradient: linear-gradient(135deg, #c12e63 0%, #f0783c 100%);
 }
 
 /* 3. RESETEO BÁSICO Y BOX-SIZING */
