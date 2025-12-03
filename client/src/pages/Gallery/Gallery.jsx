@@ -9,7 +9,7 @@ import './Gallery.css';
 import useCartStore from '../../stores/cartStore';
 import { FaCheckCircle } from 'react-icons/fa';
 import { images } from '../../data/mockData';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.svg';
 
 function Gallery() {
   const [open, setOpen] = useState(false);

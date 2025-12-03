@@ -25,7 +25,7 @@
 
 .floating-btn.secondary {
   bottom: 95px;
-  background-color: #111827;
+  background-color: var(--secondary-color);
 }
 
 @media (max-width: 600px) {

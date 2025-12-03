@@ -23,7 +23,7 @@
 }
 
 .catalog-card {
-  background-color: #fff;
+  background-color: var(--surface-color);
   border-radius: 16px; /* Bordes más redondeados */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   overflow: hidden; /* ¡Crucial para el efecto zoom en la imagen! */
@@ -61,7 +61,7 @@
 
 .card-content p {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--muted-text);
   line-height: 1.5;
   flex-grow: 1; /* Otro truco para empujar el botón hacia abajo */
 }
@@ -110,3 +110,4 @@
     grid-template-columns: 1fr;
   }
 }
+

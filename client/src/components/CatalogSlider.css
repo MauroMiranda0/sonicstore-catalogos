@@ -2,7 +2,7 @@
 
 .catalog-slider-section {
     padding: 4rem 0;
-    background-color: #fdfdfe;
+    background-color: var(--light-bg);
     /* Un fondo ligeramente diferente para separar secciones */
 }
 
@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--surface-color);
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     overflow: hidden;
@@ -87,7 +87,7 @@
 
 .slider-card-content p {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--muted-text);
     line-height: 1.5;
     margin-bottom: 0;
 }
@@ -115,7 +115,7 @@
 .custom-prev-btn,
 .custom-next-btn {
     background-color: transparent;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-color);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -140,13 +140,13 @@
 .swiper-button-disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    background-color: #f0f0f0 !important;
-    color: #aaa !important;
-    border-color: #e0e0e0 !important;
+    background-color: var(--light-bg) !important;
+    color: var(--muted-text) !important;
+    border-color: var(--border-color) !important;
 }
 
 .catalog-swiper .swiper-pagination-bullet {
-    background-color: #ccc;
+    background-color: var(--border-color);
     opacity: 1;
 }
 
@@ -191,3 +191,4 @@
         display: none;
     }
 }
+

@@ -13,9 +13,12 @@ function Footer() {
           {/* Columna 1: Logo y Descripción */}
           <div className="footer-column">
             <img src={logo} alt="SonicStore Logo" className="footer-logo" />
+            <h2>Sonic Store</h2>
             <p className="footer-description">
-              Tu tienda de confianza para encontrar lo último en moda, belleza y hogar. 
-              Estilo y calidad en cada catálogo.
+              <span>
+              Tu tienda de confianza para encontrar lo último en moda,
+              belleza y hogar.
+              </span>
             </p>
           </div>
 

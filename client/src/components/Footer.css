@@ -2,7 +2,7 @@
 
 .site-footer {
     background-color: var(--background-dark);
-    color: #a9a9a9;
+    color: var(--border-color);
     /* Un gris claro para el texto */
     padding: 4rem 0 2rem 0;
 }
@@ -24,9 +24,13 @@
     font-size: 0.9rem;
     line-height: 1.6;
 }
+.footer-column h2 {
+    color: var(--border-color);
+    font-weight: 900;
+}
 
 .footer-column h4 {
-    color: #fff;
+    color: var(--surface-color);
     font-size: 1.1rem;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -43,7 +47,7 @@
 }
 
 .footer-column ul a {
-    color: #a9a9a9;
+    color: var(--border-color);
     text-decoration: none;
     transition: color 0.2s, padding-left 0.2s;
     font-weight: 400;
@@ -51,10 +55,16 @@
 }
 
 .footer-column ul a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     padding-left: 5px;
     text-decoration: none;
     /* Quitamos el subrayado del hover global */
+}
+
+.footer-column span{
+    font-size: 1rem;
+    color: var(--border-color);   
+    font-style: italic;
 }
 
 .social-icons {
@@ -63,7 +73,7 @@
 }
 
 .social-icons a {
-    color: #a9a9a9;
+    color: var(--muted-text);
     font-size: 1.5rem;
     transition: color 0.2s, transform 0.2s;
 }
@@ -74,7 +84,7 @@
 }
 
 .footer-bottom {
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--border-color);
     padding-top: 2rem;
     text-align: center;
     font-size: 0.8rem;

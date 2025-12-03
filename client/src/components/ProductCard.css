@@ -1,6 +1,6 @@
 /* client/src/components/ProductCard.css */
 .product-card {
-  background-color: #fff;
+  background-color: var(--surface-color);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -14,7 +14,7 @@
 
 .product-image-container {
   aspect-ratio: 1 / 1.1;
-  background-color: #f7f7f7;
+  background-color: var(--light-bg);
 }
 
 .product-image-container img {
