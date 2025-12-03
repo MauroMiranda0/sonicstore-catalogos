@@ -4,47 +4,88 @@ import useCartStore from '../stores/cartStore';
 import './AddProductForm.css';
 
 function AddProductForm({ onProductAdded }) {
-  // 1. Llama a la acción 'addProduct' desde nuestro store
   const addProduct = useCartStore((state) => state.addProduct);
 
-  // 2. Estado local para los campos del formulario
+  const [productCode, setProductCode] = useState('');
   const [productName, setProductName] = useState('');
+  const [variant, setVariant] = useState('');
+  const [brand, setBrand] = useState('');
   const [quantity, setQuantity] = useState(1);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!productName.trim()) {
-      alert('Por favor, ingresa el nombre o código del producto.');
+    if (!productCode.trim()) {
+      alert('El código del producto es obligatorio.');
+      return;
+    }
+    if (!brand.trim()) {
+      alert('La marca es obligatoria.');
       return;
     }
 
-    // 3. Crea el objeto del producto y lo añade al store
     const newProduct = {
-      name: productName,
-      quantity: parseInt(quantity, 10),
+      sku: productCode.trim(),
+      name: productName.trim() || productCode.trim(),
+      brand: brand.trim(),
+      catalog: brand.trim(),
+      variant: variant.trim(),
+      quantity: parseInt(quantity, 10) || 1,
     };
     addProduct(newProduct);
-    
-    // 4. Limpia el formulario y cierra el modal (a través de la prop)
+
+    setProductCode('');
     setProductName('');
+    setBrand('');
+    setVariant('');
     setQuantity(1);
-    onProductAdded(); // Llama a la función del padre para cerrar el modal
+    onProductAdded();
   };
 
   return (
     <form onSubmit={handleSubmit} className="add-product-form">
       <p className="form-instructions">
-        Escribe el código o nombre del producto que viste en el catálogo y la cantidad que deseas.
+        Captura los datos tal como aparecen en el catálogo para armar tu pedido.
       </p>
       <div className="form-group">
-        <label htmlFor="productName">Nombre o Código del Producto</label>
+        <label htmlFor="productCode">Código del producto *</label>
+        <input
+          type="text"
+          id="productCode"
+          value={productCode}
+          onChange={(e) => setProductCode(e.target.value)}
+          placeholder="Ej: 12345"
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="productName">Nombre del producto (opcional)</label>
         <input
           type="text"
           id="productName"
           value={productName}
           onChange={(e) => setProductName(e.target.value)}
-          placeholder="Ej: Vestido Floral Azul, Cód: 12345"
+          placeholder="Ej: Vestido Floral Azul"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="brand">Marca *</label>
+        <input
+          type="text"
+          id="brand"
+          value={brand}
+          onChange={(e) => setBrand(e.target.value)}
+          placeholder="Ej: Natura, Avón, etc."
           required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="variant">Talla / color / variante</label>
+        <input
+          type="text"
+          id="variant"
+          value={variant}
+          onChange={(e) => setVariant(e.target.value)}
+          placeholder="Ej: Talla M, Color rojo"
         />
       </div>
       <div className="form-group">

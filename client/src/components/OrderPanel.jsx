@@ -15,15 +15,19 @@ function OrderPanel({ isOpen, onClose }) {
   const handleSendOrder = () => {
     if (items.length === 0) return;
 
-    let message = 'Hola! Quisiera cotizar los siguientes productos:\n\n';
-    items.forEach((item) => {
-      message += `- *Producto:* ${item.name}\n`;
-      if (item.catalog) {
-        message += `  *Catálogo:* ${item.catalog}\n`;
-      }
-      message += `  *Cantidad:* ${item.quantity}\n\n`;
-    });
-    message += 'Gracias!';
+    const body = items
+      .map((item, index) => {
+        const parts = [];
+        parts.push(`${index + 1}. ${item.name}`);
+        if (item.brand || item.catalog) parts.push(`Marca: ${item.brand || item.catalog}`);
+        if (item.sku) parts.push(`Código: ${item.sku}`);
+        if (item.variant) parts.push(`Variante: ${item.variant}`);
+        parts.push(`Cantidad: ${item.quantity}`);
+        return parts.join(' | ');
+      })
+      .join('\n');
+
+    const message = `Hola! Quisiera cotizar los siguientes productos:\n\n${body}\n\nGracias!`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/527712650312?text=${encodedMessage}`;
