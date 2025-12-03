@@ -98,15 +98,50 @@ export const images = [
 ];
 
 export const catalogs = [
-  { id: 1, name: 'Natura', description: 'Calzado comodo y moderno para entrenamiento y uso diario.', image: catalogImg01, catalogUrl: 'https://www.natura.com.mx/' },
-  { id: 2, name: 'Zapatos Elegantes', description: 'Estilo y sofisticacion para ocasiones especiales.', image: catalogImg02, catalogUrl: 'https://ejemplo.com/catalogos/zapatos-elegantes' },
-  { id: 3, name: 'Maquillaje Natural', description: 'Productos suaves para un look fresco y diario.', image: catalogImg03, catalogUrl: 'https://ejemplo.com/catalogos/maquillaje-natural' },
-  { id: 4, name: 'Maquillaje Profesional', description: 'Alta cobertura y larga duracion para eventos y sesiones.', image: catalogImg04, catalogUrl: 'https://ejemplo.com/catalogos/maquillaje-profesional' },
-  { id: 5, name: 'Ropa Casual', description: 'Moda relajada y comoda para el dia a dia.', image: catalogImg05, catalogUrl: 'https://ejemplo.com/catalogos/ropa-casual' },
-  { id: 6, name: 'Ropa Formal', description: 'Prendas elegantes ideales para oficina o eventos.', image: catalogImg06, catalogUrl: 'https://ejemplo.com/catalogos/ropa-formal' },
-  { id: 7, name: 'Decoracion de Hogar', description: 'Articulos decorativos para transformar tus espacios.', image: catalogImg07, catalogUrl: 'https://ejemplo.com/catalogos/decoracion-hogar' },
-  { id: 8, name: 'Electrodomesticos', description: 'Soluciones practicas para tu cocina y limpieza.', image: catalogImg08, catalogUrl: 'https://ejemplo.com/catalogos/electrodomesticos' },
-  { id: 9, name: 'Ropa de Cama', description: 'Sabanas, edredones y almohadas para un descanso comodo.', image: catalogImg09, catalogUrl: 'https://ejemplo.com/catalogos/ropa-de-cama' },
+  {
+    id: 1,
+    name: 'Natura',
+    description: 'Belleza sustentable con activos vegetales de la biodiversidad brasileña.',
+    image: catalogImg01,
+    catalogUrl: 'https://www.natura.com.mx/',
+    longDescription:
+      'Disfruta la línea completa de bienestar de Natura: fórmulas con activos vegetales de la biodiversidad brasileña, fragancias icónicas y cuidado personal sustentable. Explora los catálogos en línea para elegir sets, ediciones especiales y regalos de temporada con entrega a domicilio y descuentos exclusivos.',
+    brandStory:
+      'Natura es la marca sustentable número uno del mundo, fundada en 1969. Combina innovación, ingredientes de origen vegetal y un compromiso profundo con el medio ambiente para ofrecer belleza responsable y de alta calidad.',
+  },
+  {
+    id: 2,
+    name: 'Terramar Brands',
+    description: 'Ciencia y naturaleza en fórmulas premium para la mujer latina.',
+    image: catalogImg02,
+    catalogUrl: 'https://ejemplo.com/catalogos/terramar',
+    longDescription:
+      'Terramar une ciencia y naturaleza con ingredientes premium de la tierra y el mar: ADN marino, células madre de algas, caviar y oro. Sus líneas capilar, facial y de maquillaje ofrecen resultados visibles, texturas sensoriales y fórmulas hipoalergénicas a precios accesibles.',
+    brandStory:
+      'Terramar nació para brindar lujo accesible a la mujer latina. Con enfoque en investigación, ingredientes botánicos y marinos, y productos libres de crueldad, la marca entrega soluciones de belleza confiables y efectivas.',
+  },
+  {
+    id: 3,
+    name: 'Andrea',
+    description: 'Moda, calzado y hogar para toda la familia, con compras seguras y recompensas.',
+    image: catalogImg03,
+    catalogUrl: 'https://ejemplo.com/catalogos/andrea',
+    longDescription:
+      'Andrea es un universo de moda y hogar para toda la familia: calzado, ropa, accesorios, belleza, electrónica y línea Home para renovar cada espacio. Sus catálogos por temporada incluyen tendencias, outlet y beneficios como compras seguras y programas de recompensas.',
+    brandStory:
+      'Andrea se ha consolidado como un referente de estilo integral en México. Con colecciones para mujer, hombre, niños y hogar, la marca combina variedad, seguridad en compras y promociones pensadas para sus clientes.',
+  },
+  {
+    id: 4,
+    name: "L'BEL",
+    description: 'Cuidado de la piel avanzado, maquillaje y fragancias para regalar y lucir.',
+    image: catalogImg04,
+    catalogUrl: 'https://ejemplo.com/catalogos/lbel',
+    longDescription:
+      'L’BEL ofrece cuidado de la piel avanzado, maquillaje, fragancias y sets para regalar. Sus catálogos presentan lanzamientos, combinaciones para rutinas completas y beneficios como envíos gratis en compras seleccionadas.',
+    brandStory:
+      'L’BEL es una marca de belleza de origen latino con enfoque en calidad y detalle. Su filosofía “Regala lo excepcional” inspira productos refinados, aromas distintivos y experiencias de compra pensadas para sorprender.',
+  },
 ];
 
 export const testimonials = [

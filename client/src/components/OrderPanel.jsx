@@ -3,7 +3,7 @@ import React from 'react';
 import useCartStore from '../stores/cartStore';
 import { FaTimes, FaTrash, FaCreditCard } from 'react-icons/fa';
 import './OrderPanel.css';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 import aplazoLogo from '../assets/aplazo-logo.svg';
 
 function OrderPanel({ isOpen, onClose }) {
@@ -66,7 +66,11 @@ function OrderPanel({ isOpen, onClose }) {
                   <li key={item.id} className="order-item">
                     <div className="item-info">
                       <span className="item-name">{item.name}</span>
-                      {item.catalog && <span className="item-catalog">Catálogo: {item.catalog}</span>}
+                      {(item.brand || item.catalog) && (
+                        <span className="item-meta">Marca: {item.brand || item.catalog}</span>
+                      )}
+                      {item.sku && <span className="item-meta">Código: {item.sku}</span>}
+                      {item.variant && <span className="item-meta">Variante: {item.variant}</span>}
                     </div>
                     <div className="item-actions">
                       <input

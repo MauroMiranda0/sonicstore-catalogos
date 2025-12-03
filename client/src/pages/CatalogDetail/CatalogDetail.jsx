@@ -36,7 +36,19 @@ function CatalogDetail() {
           <img src={catalog.image} alt={catalog.name} />
           <div className="detail-info">
             <h1>{catalog.name}</h1>
-            <p>{catalog.description}</p>
+            <p className="catalog-description">{catalog.description}</p>
+            <div className="catalog-about">
+              <h3>Descripción completa</h3>
+              <p>
+                {catalog.longDescription ||
+                  'Descubre toda la línea de productos y las novedades destacadas de esta marca. Consulta tallas, colores, acabados y todas las variantes disponibles en el catálogo oficial.'}
+              </p>
+              <h3>Reseña de la marca</h3>
+              <p>
+                {catalog.brandStory ||
+                  'Marca reconocida por su calidad y tendencia. Combina innovación, estilo y precios competitivos para ofrecerte colecciones frescas temporada tras temporada.'}
+              </p>
+            </div>
             <div className="catalog-actions">
               <button className="view-catalog-btn" onClick={handleViewCatalog}>Ver Catálogo Completo</button>
               {/* 5. Botón para añadir producto manualmente */}

@@ -164,7 +164,7 @@
   font-weight: 600;
   color: var(--text-heading);
 }
-.item-catalog {
+.item-meta {
   font-size: 0.85rem;
   color: var(--muted-text);
 }
