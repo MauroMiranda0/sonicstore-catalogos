@@ -1,9 +1,10 @@
 // client/src/components/OrderPanel.jsx
 import React from 'react';
 import useCartStore from '../stores/cartStore';
-import { FaTimes, FaTrash, FaCreditCard, FaMobileAlt } from 'react-icons/fa';
+import { FaTimes, FaTrash, FaCreditCard } from 'react-icons/fa';
 import './OrderPanel.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.svg';
+import aplazoLogo from '../assets/aplazo-logo.svg';
 
 function OrderPanel({ isOpen, onClose }) {
   const items = useCartStore((state) => state.items);
@@ -92,7 +93,8 @@ function OrderPanel({ isOpen, onClose }) {
                     <FaCreditCard /> Tarjeta crédito / débito
                   </span>
                   <span className="payment-pill">
-                    <FaMobileAlt /> App Aplazo
+                    <img src={aplazoLogo} alt="Aplazo" className="payment-logo" />
+                    App
                   </span>
                 </div>
               </div>

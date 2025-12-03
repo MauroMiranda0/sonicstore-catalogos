@@ -133,6 +133,9 @@
   font-size: 0.9rem;
   border: 1px solid var(--border-color);
 }
+.payment-logo {
+  height: 16px;
+}
 
 .order-item-list {
   list-style: none;
