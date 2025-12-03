@@ -1,18 +1,27 @@
 // client/src/components/Header.jsx
 
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/logo.svg';
 
-import { FaWhatsapp, FaUserCircle, FaShoppingBag, FaSearch } from 'react-icons/fa';
+import { FaWhatsapp, FaUserCircle, FaShoppingBag, FaSearch, FaQuestionCircle } from 'react-icons/fa';
 import useCartStore from '../stores/cartStore';
 
-function Header({ onCartClick }) {
+function Header({ onCartClick, onHowToBuyClick }) {
   const items = useCartStore((state) => state.items);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
 
   const closeMenu = () => setIsMenuOpen(false);
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (!searchTerm.trim()) return;
+    navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="site-header">
@@ -22,10 +31,15 @@ function Header({ onCartClick }) {
             <img src={logo} alt="SonicStore Logo" />
           </Link>
 
-          <div className="header-search">
-            <input type="text" placeholder="Buscar productos..." />
-            <button><FaSearch /></button>
-          </div>
+          <form className="header-search" onSubmit={handleSearchSubmit}>
+            <input
+              type="text"
+              placeholder="Buscar productos, marcas..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <button type="submit" aria-label="Buscar"><FaSearch /></button>
+          </form>
 
           <div className="header-icons">
             <a
@@ -36,11 +50,14 @@ function Header({ onCartClick }) {
             >
               <FaWhatsapp />
             </a>
-            <Link to="/account" aria-label="Mi Cuenta"><FaUserCircle /></Link>
+            {/* <Link to="/account" aria-label="Mi Cuenta"><FaUserCircle /></Link> */}
 
             <button className="cart-icon-btn" aria-label="Mi Pedido" onClick={onCartClick} type="button">
               <FaShoppingBag />
               {items.length > 0 && <span className="cart-count">{items.length}</span>}
+            </button>
+            <button type="button" className="icon-link" onClick={onHowToBuyClick} aria-label="¿Cómo comprar?">
+              <FaQuestionCircle />
             </button>
 
             <button

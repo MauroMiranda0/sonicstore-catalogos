@@ -15,6 +15,9 @@ import NotFound from './pages/NotFound/NotFound.jsx';
 import Account from './pages/Account/Account.jsx';
 import CatalogDetail from './pages/CatalogDetail/CatalogDetail.jsx'; // 1. Importa el nuevo componente que crearemos  para mostrar los detalles del catálogo
 import ProductDetail from './pages/ProductDetail/ProductDetail.jsx'; 
+import HowToBuy from './pages/HowToBuy/HowToBuy.jsx';
+import SearchResults from './pages/Search/Search.jsx';
+import './pages/Search/Search.css';
 
 import './index.css';
 
@@ -52,6 +55,14 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />,
+      },
+      {
+        path: 'how-to-buy',
+        element: <HowToBuy />,
+      },
+      {
+        path: 'search',
+        element: <SearchResults />,
       },
       {
         path: 'gallery',

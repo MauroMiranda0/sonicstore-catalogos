@@ -1,87 +1,119 @@
 // client/src/components/OrderPanel.jsx
 import React from 'react';
 import useCartStore from '../stores/cartStore';
-import { FaTimes, FaTrash } from 'react-icons/fa';
+import { FaTimes, FaTrash, FaCreditCard } from 'react-icons/fa';
 import './OrderPanel.css';
-
-
+import logo from '../assets/logo.png';
+import aplazoLogo from '../assets/aplazo-logo.svg';
 
 function OrderPanel({ isOpen, onClose }) {
-  // 1. Obtenemos el estado y las acciones que necesitamos del store
-  const items = useCartStore(state => state.items);
-const removeProduct = useCartStore(state => state.removeProduct);
-const updateQuantity = useCartStore(state => state.updateQuantity);
-const clearCart = useCartStore(state => state.clearCart);
+  const items = useCartStore((state) => state.items);
+  const removeProduct = useCartStore((state) => state.removeProduct);
+  const updateQuantity = useCartStore((state) => state.updateQuantity);
+  const clearCart = useCartStore((state) => state.clearCart);
 
-
-  // 2. Función para generar y abrir el enlace de WhatsApp
   const handleSendOrder = () => {
     if (items.length === 0) return;
 
-    // Formateamos el mensaje
-    let message = '¡Hola! Quisiera cotizar los siguientes productos:\n\n';
-    items.forEach(item => {
-      message += `- *Producto:* ${item.name}\n`;
-      message += `  *Cantidad:* ${item.quantity}\n\n`;
-    });
-    message += '¡Gracias!';
+    const body = items
+      .map((item, index) => {
+        const parts = [];
+        parts.push(`${index + 1}. ${item.name}`);
+        if (item.brand || item.catalog) parts.push(`Marca: ${item.brand || item.catalog}`);
+        if (item.sku) parts.push(`Código: ${item.sku}`);
+        if (item.variant) parts.push(`Variante: ${item.variant}`);
+        parts.push(`Cantidad: ${item.quantity}`);
+        return parts.join(' | ');
+      })
+      .join('\n');
 
-    // Codificamos el mensaje para que sea seguro en una URL
+    const message = `Hola! Quisiera cotizar los siguientes productos:\n\n${body}\n\nGracias!`;
+
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/527712650312?text=${encodedMessage}`;
-    
-    // Abrimos WhatsApp en una nueva pestaña
     window.open(whatsappUrl, '_blank');
-    
-    // Opcional: Limpiar el carrito después de enviar
     clearCart();
   };
 
-
   return (
     <>
-      {/* Overlay oscuro cuando el panel está abierto */}
       <div className={`order-panel-overlay ${isOpen ? 'open' : ''}`} onClick={onClose}></div>
-      
-      {/* El panel en sí */}
+
       <div className={`order-panel ${isOpen ? 'open' : ''}`}>
         <div className="panel-header">
-          <h3>Mi Pedido</h3>
-          <button onClick={onClose} className="panel-close-btn"><FaTimes /></button>
+          <div className="panel-brand">
+            <img src={logo} alt="SonicStore" className="panel-logo" />
+            <div>
+              <h3>Mi Pedido</h3>
+              <p className="panel-subtitle">Ticket preliminar</p>
+            </div>
+          </div>
+          <button onClick={onClose} className="panel-close-btn" aria-label="Cerrar panel">
+            <FaTimes />
+          </button>
         </div>
 
         <div className="panel-body">
           {items.length === 0 ? (
             <p className="empty-cart-message">Tu lista de pedido está vacía.</p>
           ) : (
-            <ul className="order-item-list">
-              {items.map(item => (
-                <li key={item.id} className="order-item">
-                  <div className="item-info">
-                    <span className="item-name">{item.name}</span>
-                  </div>
-                  <div className="item-actions">
-                    <input
-                      type="number"
-                      className="item-quantity-input"
-                      value={item.quantity}
-                      onChange={(e) => updateQuantity(item.id, e.target.value)}
-                      min="1"
-                    />
-                    <button onClick={() => removeProduct(item.id)} className="item-remove-btn">
-                      <FaTrash />
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <div className="ticket">
+              <div className="ticket-top">
+                <span className="ticket-label">Resumen de compra</span>
+              </div>
+              <ul className="order-item-list">
+                {items.map((item) => (
+                  <li key={item.id} className="order-item">
+                    <div className="item-info">
+                      <span className="item-name">{item.name}</span>
+                      {(item.brand || item.catalog) && (
+                        <span className="item-meta">Marca: {item.brand || item.catalog}</span>
+                      )}
+                      {item.sku && <span className="item-meta">Código: {item.sku}</span>}
+                      {item.variant && <span className="item-meta">Variante: {item.variant}</span>}
+                    </div>
+                    <div className="item-actions">
+                      <input
+                        type="number"
+                        className="item-quantity-input"
+                        value={item.quantity}
+                        onChange={(e) => updateQuantity(item.id, e.target.value)}
+                        min="1"
+                      />
+                      <button
+                        onClick={() => removeProduct(item.id)}
+                        className="item-remove-btn"
+                        aria-label={`Eliminar ${item.name}`}
+                      >
+                        <FaTrash />
+                      </button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <div className="ticket-bottom">
+                <span className="ticket-note">Precios se confirman por WhatsApp</span>
+              </div>
+              <div className="payment-methods">
+                <span className="payment-label">Pagos aceptados</span>
+                <div className="payment-icons">
+                  <span className="payment-pill">
+                    <FaCreditCard /> Tarjeta crédito / débito
+                  </span>
+                  <span className="payment-pill">
+                    <img src={aplazoLogo} alt="Aplazo" className="payment-logo" />
+                    App
+                  </span>
+                </div>
+              </div>
+            </div>
           )}
         </div>
 
         <div className="panel-footer">
-          <button 
-            onClick={handleSendOrder} 
-            className="send-order-btn" 
+          <button
+            onClick={handleSendOrder}
+            className="send-order-btn"
             disabled={items.length === 0}
           >
             Enviar Pedido por WhatsApp
