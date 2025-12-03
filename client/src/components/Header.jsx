@@ -8,7 +8,7 @@ import logo from '../assets/logo.svg';
 import { FaWhatsapp, FaUserCircle, FaShoppingBag, FaSearch, FaQuestionCircle } from 'react-icons/fa';
 import useCartStore from '../stores/cartStore';
 
-function Header({ onCartClick }) {
+function Header({ onCartClick, onHowToBuyClick }) {
   const items = useCartStore((state) => state.items);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -42,7 +42,9 @@ function Header({ onCartClick }) {
               <FaShoppingBag />
               {items.length > 0 && <span className="cart-count">{items.length}</span>}
             </button>
-            <Link to="/how-to-buy" aria-label="¿Cómo comprar?"><FaQuestionCircle /></Link>
+            <button type="button" className="icon-link" onClick={onHowToBuyClick} aria-label="¿Cómo comprar?">
+              <FaQuestionCircle />
+            </button>
 
             <button
               className="menu-toggle"
