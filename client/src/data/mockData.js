@@ -97,28 +97,95 @@ export const images = [
   { src: img36, alt: 'Imagen 36', title: 'Abrigo invernal',  sku: 'SKU-3036', description: 'Abrigo grueso para invierno frío.', features: ['Forro térmico', 'Capucha amplia', 'Botones resistentes'] }
 ];
 
+export const naturaProducts = [
+  {
+    id: 'NATMEX-95937',
+    name: 'Crema Nutritiva para Manos Tododia Cereza y Avellana 50 ml',
+    brand: 'Tododia',
+    price: 132.0,
+    rating: 4.0,
+    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dw1646596f/produtos/NATMEX-95937_1.jpg',
+    url: 'https://www.natura.com.mx/p/crema-nutritiva-para-manos-tododia-cereza-y-avellana-50-ml/NATMEX-95937?position=1&listTitle=manual+showcase+-+descubre+el+mundo+natura',
+  },
+  {
+    id: 'NATMEX-99183',
+    name: 'Crema Nutritiva para el Cuerpo Tododia Cereza y Avellana 400 ml',
+    brand: 'Tododia',
+    price: 255.0,
+    rating: 4.8,
+    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dw7988583a/produtos/NATMEX-99183_1.jpg',
+    url: 'https://www.natura.com.mx/p/crema-nutritiva-para-el-cuerpo-tododia-cereza-y-avellana-400-ml/NATMEX-99183?position=2&listTitle=manual+showcase+-+descubre+el+mundo+natura',
+  },
+  {
+    id: 'NATMEX-21307',
+    name: 'Aceite Bifasico Corporal Tododia Cereza y Avellana 120 ml',
+    brand: 'Tododia',
+    price: 285.0,
+    rating: null,
+    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dw6726bca8/produtos/NATMEX-21307_1.jpg',
+    url: 'https://www.natura.com.mx/p/aceite-bifasico-corporal-tododia-cereza-y-avellana-120-ml/NATMEX-21307?position=3&listTitle=manual+showcase+-+descubre+el+mundo+natura',
+  },
+  {
+    id: 'NATMEX-23218',
+    name: 'Crema Nutritiva para el Cuerpo Tododia Cereza y Avellana 200 ml',
+    brand: 'Tododia',
+    price: 167.0,
+    rating: 5.0,
+    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dwa25859d6/produtos/NATMEX-23218_1.jpg',
+    url: 'https://www.natura.com.mx/p/crema-nutritiva-para-el-cuerpo-tododia-cereza-y-avellana-200-ml/NATMEX-23218?position=4&listTitle=manual+showcase+-+descubre+el+mundo+natura',
+  },
+  {
+    id: 'NATMEX-95840',
+    name: 'Jabon en Barra Puro Vegetal Tododia Cereza y Avellana 5x90 g',
+    brand: 'Tododia',
+    price: 153.3,
+    rating: 5.0,
+    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dw57f7a13b/produtos/PRODUTO/NATMEX-95840_1.jpg',
+    url: 'https://www.natura.com.mx/p/jabon-en-barra-puro-vegetal-tododia-cereza-y-avellana-5-unidades-de-90-g/NATMEX-95840?position=5&listTitle=manual+showcase+-+descubre+el+mundo+natura',
+  },
+  {
+    id: 'NATMEX-95843',
+    name: 'Jabon Liquido en Gel Tododia Cereza y Avellana 300 ml',
+    brand: 'Tododia',
+    price: 238.0,
+    rating: null,
+    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dwa7fae200/produtos/NATMEX-95843_1.jpg',
+    url: 'https://www.natura.com.mx/p/jabon-liquido-en-gel-tododia-cereza-y-avellana-300-ml/NATMEX-95843?position=6&listTitle=manual+showcase+-+descubre+el+mundo+natura',
+  },
+  {
+    id: 'NATMEX-148001',
+    name: 'Desodorante Antitranspirante en Crema Tododia Cereza y Avellana 80 g',
+    brand: 'Tododia',
+    price: 108.0,
+    rating: 5.0,
+    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dw8c61a7c7/produtos/NATMEX-148001_1.jpg',
+    url: 'https://www.natura.com.mx/p/desodorante-antitranspirante-en-crema-tododia-cereza-y-avellana-80-g/NATMEX-148001?position=7&listTitle=manual+showcase+-+descubre+el+mundo+natura',
+  },
+];
+
+
 export const catalogs = [
   {
     id: 1,
     name: 'Natura',
-    description: 'Belleza sustentable con activos vegetales de la biodiversidad brasileña.',
+    description: 'Belleza sustentable con activos vegetales de la biodiversidad brasileÇña.',
     image: catalogImg01,
     catalogUrl: 'https://www.natura.com.mx/',
     longDescription:
-      'Disfruta la línea completa de bienestar de Natura: fórmulas con activos vegetales de la biodiversidad brasileña, fragancias icónicas y cuidado personal sustentable. Explora los catálogos en línea para elegir sets, ediciones especiales y regalos de temporada con entrega a domicilio y descuentos exclusivos.',
+      'Disfruta la lÇðnea completa de bienestar de Natura: fÇürmulas con activos vegetales de la biodiversidad brasileÇña, fragancias icÇünicas y cuidado personal sustentable. Explora los catÇ­logos en lÇðnea para elegir sets, ediciones especiales y regalos de temporada con entrega a domicilio y descuentos exclusivos.',
     brandStory:
-      'Natura es la marca sustentable número uno del mundo, fundada en 1969. Combina innovación, ingredientes de origen vegetal y un compromiso profundo con el medio ambiente para ofrecer belleza responsable y de alta calidad.',
+      'Natura es la marca sustentable nÇ§mero uno del mundo, fundada en 1969. Combina innovaciÇün, ingredientes de origen vegetal y un compromiso profundo con el medio ambiente para ofrecer belleza responsable y de alta calidad.',
   },
   {
     id: 2,
     name: 'Terramar Brands',
-    description: 'Ciencia y naturaleza en fórmulas premium para la mujer latina.',
+    description: 'Ciencia y naturaleza en fÇürmulas premium para la mujer latina.',
     image: catalogImg02,
     catalogUrl: 'https://ejemplo.com/catalogos/terramar',
     longDescription:
-      'Terramar une ciencia y naturaleza con ingredientes premium de la tierra y el mar: ADN marino, células madre de algas, caviar y oro. Sus líneas capilar, facial y de maquillaje ofrecen resultados visibles, texturas sensoriales y fórmulas hipoalergénicas a precios accesibles.',
+      'Terramar une ciencia y naturaleza con ingredientes premium de la tierra y el mar: ADN marino, cÇ¸lulas madre de algas, caviar y oro. Sus lÇðneas capilar, facial y de maquillaje ofrecen resultados visibles, texturas sensoriales y fÇürmulas hipoalergÇ¸nicas a precios accesibles.',
     brandStory:
-      'Terramar nació para brindar lujo accesible a la mujer latina. Con enfoque en investigación, ingredientes botánicos y marinos, y productos libres de crueldad, la marca entrega soluciones de belleza confiables y efectivas.',
+      'Terramar naciÇü para brindar lujo accesible a la mujer latina. Con enfoque en investigaciÇün, ingredientes botÇ­nicos y marinos, y productos libres de crueldad, la marca entrega soluciones de belleza confiables y efectivas.',
   },
   {
     id: 3,
@@ -127,9 +194,9 @@ export const catalogs = [
     image: catalogImg03,
     catalogUrl: 'https://ejemplo.com/catalogos/andrea',
     longDescription:
-      'Andrea es un universo de moda y hogar para toda la familia: calzado, ropa, accesorios, belleza, electrónica y línea Home para renovar cada espacio. Sus catálogos por temporada incluyen tendencias, outlet y beneficios como compras seguras y programas de recompensas.',
+      'Andrea es un universo de moda y hogar para toda la familia: calzado, ropa, accesorios, belleza, electrÇünica y lÇðnea Home para renovar cada espacio. Sus catÇ­logos por temporada incluyen tendencias, outlet y beneficios como compras seguras y programas de recompensas.',
     brandStory:
-      'Andrea se ha consolidado como un referente de estilo integral en México. Con colecciones para mujer, hombre, niños y hogar, la marca combina variedad, seguridad en compras y promociones pensadas para sus clientes.',
+      'Andrea se ha consolidado como un referente de estilo integral en MÇ¸xico. Con colecciones para mujer, hombre, niÇños y hogar, la marca combina variedad, seguridad en compras y promociones pensadas para sus clientes.',
   },
   {
     id: 4,
@@ -138,11 +205,12 @@ export const catalogs = [
     image: catalogImg04,
     catalogUrl: 'https://ejemplo.com/catalogos/lbel',
     longDescription:
-      'L’BEL ofrece cuidado de la piel avanzado, maquillaje, fragancias y sets para regalar. Sus catálogos presentan lanzamientos, combinaciones para rutinas completas y beneficios como envíos gratis en compras seleccionadas.',
+      'Lƒ?TBEL ofrece cuidado de la piel avanzado, maquillaje, fragancias y sets para regalar. Sus catÇ­logos presentan lanzamientos, combinaciones para rutinas completas y beneficios como envÇðos gratis en compras seleccionadas.',
     brandStory:
-      'L’BEL es una marca de belleza de origen latino con enfoque en calidad y detalle. Su filosofía “Regala lo excepcional” inspira productos refinados, aromas distintivos y experiencias de compra pensadas para sorprender.',
+      'Lƒ?TBEL es una marca de belleza de origen latino con enfoque en calidad y detalle. Su filosofÇða ƒ?oRegala lo excepcionalƒ?? inspira productos refinados, aromas distintivos y experiencias de compra pensadas para sorprender.',
   },
 ];
+
 
 export const testimonials = [
   { id: 101, author: 'Flea', quote: 'Estos zapatos tienen un look increible y el servicio al cliente fue de primera.', avatar: avatar0, rating: 5 },

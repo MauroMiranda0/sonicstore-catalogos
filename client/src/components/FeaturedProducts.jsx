@@ -7,22 +7,35 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { FaCheckCircle } from 'react-icons/fa';
 import useCartStore from '../stores/cartStore';
-import { images as galleryImages } from '../data/mockData';
+import { naturaProducts } from '../data/mockData';
 
 function FeaturedProducts() {
-  const products = galleryImages.slice(-10);
+  const products = naturaProducts;
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
   const [feedback, setFeedback] = useState('');
   const addProduct = useCartStore((state) => state.addProduct);
 
-  const slides = products?.map((product) => ({
-    src: product.src,
-    alt: product.alt,
-    title: product.title,
-    sku: product.sku,
-    features: ['Calidad garantizada', 'Entrega rapida', 'Pago seguro'],
-  })) || [];
+  const formatPrice = (value) => (typeof value === 'number' ? `$${value.toFixed(2)} MXN` : 'Consultar precio');
+
+  const slides = products?.map((product) => {
+    const priceLabel = formatPrice(product.price);
+    const featureList = [
+      product.brand ? `Linea ${product.brand}` : 'Coleccion Natura',
+      product.rating ? `Calificacion: ${product.rating} / 5` : 'Nuevo en catalogo',
+      'Compra directa en natura.com.mx',
+    ];
+
+    return {
+      ...product,
+      src: product.image,
+      alt: product.name,
+      title: product.name,
+      sku: product.id,
+      priceLabel,
+      features: featureList,
+    };
+  }) || [];
 
   const handleSelect = (i) => {
     setIndex(i);
@@ -51,14 +64,20 @@ function FeaturedProducts() {
 
       <div className="products-grid">
         {products && products.map((product, i) => (
-          <div className="grid-item" key={product.sku || product.title} onClick={() => handleSelect(i)}>
+          <div className="grid-item" key={product.id || product.sku || product.title} onClick={() => handleSelect(i)}>
             <div className="grid-image">
-              <img src={product.src} alt={product.alt} />
+              <img src={product.image} alt={product.name} />
               <div className="image-overlay">Ver</div>
             </div>
             <div className="grid-info">
-              <p className="grid-title">{product.title}</p>
-              <img src={logo} alt="SonicStore" className="grid-logo" />
+              <div className="grid-text">
+                <p className="grid-title">{product.name}</p>
+                {product.brand && <p className="grid-brand">{product.brand}</p>}
+              </div>
+              <div className="grid-meta">
+                <span className="grid-price">{formatPrice(product.price)}</span>
+                <img src={logo} alt="SonicStore" className="grid-logo" />
+              </div>
             </div>
           </div>
         ))}
@@ -86,9 +105,24 @@ function FeaturedProducts() {
                 <div className="lightbox-meta">
                   <div>
                     <h3>{slide.title}</h3>
+                    {slide.brand && <p className="lightbox-brand">{slide.brand}</p>}
                     {slide.sku && <p className="lightbox-sku">SKU: {slide.sku}</p>}
+                    {slide.rating && <p className="lightbox-rating">Calificacion: {slide.rating} / 5</p>}
                   </div>
-                  <span className="lightbox-price">{slide.price}</span>
+                  <div className="lightbox-price-block">
+                    <span className="lightbox-price">{slide.priceLabel}</span>
+                    {slide.url && (
+                      <a
+                        className="lightbox-link"
+                        href={slide.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Ver en Natura
+                      </a>
+                    )}
+                  </div>
                 </div>
                 <ul className="lightbox-features">
                   {slide.features?.map((feature) => (
