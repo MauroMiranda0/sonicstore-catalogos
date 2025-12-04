@@ -171,6 +171,13 @@
     font-size: 1.3rem;
 }
 
+.lightbox-brand,
+.lightbox-rating {
+    margin: 0.15rem 0 0;
+    color: #e5e7eb;
+    font-weight: 700;
+}
+
 .lightbox-sku {
     margin: 0.15rem 0 0;
     color: var(--secondary-color);
@@ -178,10 +185,27 @@
     font-size: 1rem;
 }
 
+.lightbox-price-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+}
+
 .lightbox-price {
     font-weight: 700;
     font-size: 1.1rem;
     color: #f9fafb;
+}
+
+.lightbox-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.lightbox-link:hover {
+    text-decoration: underline;
 }
 
 .lightbox-description {
