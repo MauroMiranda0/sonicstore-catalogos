@@ -17,7 +17,7 @@ function Gallery() {
   const [feedback, setFeedback] = useState('');
   const [page, setPage] = useState(1);
   const pageSize = 12;
-  const galleryItems = (products || []).map((item, i) => ({
+  const galleryItems = (products || []).map((item) => ({
     ...item,
     src: item.image,
     alt: item.name,
