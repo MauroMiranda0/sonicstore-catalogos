@@ -18,18 +18,25 @@ import FinalCTA from '../../components/FinalCTA';
 
 import './Home.css';
 
-// Importa tus imágenes
-import heroImage0 from '../../assets/hero-product-0.jpg';
-import heroImage1 from '../../assets/hero-product-1.jpg';
+// Importa tus imágenes / videos
+import heroVideo1 from '../../assets/hero-product-1.mp4';
+/* import heroImage0 from '../../assets/hero-product-0.jpg';
 import heroImage2 from '../../assets/hero-product-2.jpg';
-import heroImage3 from '../../assets/hero-product-3.jpg';
+import heroImage3 from '../../assets/hero-product-3.jpg'; */
 
 // Los datos de los slides siguen siendo los mismos
 const heroSlides = [
-  { id: 0, subtitle: 'La belleza en cada detalle', title: 'Colecciones que inspiran', image: heroImage0, link: '/catalogs' },
-  { id: 1, subtitle: 'La belleza en cada detalle', title: 'Colecciones que inspiran', image: heroImage1, link: '/catalogs' },
-  { id: 2, subtitle: 'Nuevas llegadas', title: 'Estilo para tu Hogar', image: heroImage2, link: '/catalogs' },
-  { id: 3, subtitle: 'Temporada de color', title: 'Maquillaje vibrante', image: heroImage3, link: '/catalogs' },
+  {
+    id: 1,
+    subtitle: 'La belleza en cada detalle',
+    title: 'Colecciones que inspiran',
+    media: heroVideo1,
+    type: 'video',
+    link: '/catalogs',
+  },
+/*   { id: 0, subtitle: 'La belleza en cada detalle', title: 'Colecciones que inspiran', media: heroImage0, type: 'image', link: '/catalogs' },
+  { id: 2, subtitle: 'Nuevas llegadas', title: 'Estilo para tu Hogar', media: heroImage2, type: 'image', link: '/catalogs' },
+  { id: 3, subtitle: 'Temporada de color', title: 'Maquillaje vibrante', media: heroImage3, type: 'image', link: '/catalogs' }, */
 ];
 
 function Home() {
@@ -50,7 +57,22 @@ function Home() {
         >
           {heroSlides.map((slide) => (
             // 2. La estructura del slide es más simple ahora
-            <SwiperSlide key={slide.id} style={{ backgroundImage: `url(${slide.image})` }}>
+            <SwiperSlide key={slide.id}>
+              {slide.type === 'video' ? (
+                <video
+                  className="hero-media"
+                  src={slide.media}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <div
+                  className="hero-media hero-media-image"
+                  style={{ backgroundImage: `url(${slide.media})` }}
+                />
+              )}
               <div className="hero-slide-overlay"></div> {/* Capa para oscurecer la imagen */}
               <div className="hero-slide-content-centered">
                 <p className="hero-subtitle">{slide.subtitle}</p>

@@ -30,8 +30,8 @@ const resolveEndpoint = (endpoint) => {
   }
 
   if (basePath.startsWith('/api/products/')) {
-    const id = Number(basePath.replace('/api/products/', ''));
-    const product = products.find(item => item.id === id);
+    const id = basePath.replace('/api/products/', '');
+    const product = products.find(item => String(item.id) === id);
     if (!product) {
       throw new Error('Producto no encontrado');
     }

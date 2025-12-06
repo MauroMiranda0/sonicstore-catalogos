@@ -4,11 +4,11 @@ import catalogImg01 from '../assets/calzado-01.jpg';
 import catalogImg02 from '../assets/calzado-02.jpg';
 import catalogImg03 from '../assets/cosmetic-01.jpg';
 import catalogImg04 from '../assets/cosmetic-02.jpg';
-import catalogImg05 from '../assets/ropa-01.jpg';
+/* import catalogImg05 from '../assets/ropa-01.jpg';
 import catalogImg06 from '../assets/ropa-02.jpg';
 import catalogImg07 from '../assets/hogar-01.jpg';
 import catalogImg08 from '../assets/hogar-02.jpg';
-import catalogImg09 from '../assets/hogar-03.jpg';
+import catalogImg09 from '../assets/hogar-03.jpg'; */
 
 import avatar0 from '../assets/cliente-0.jpg';
 import avatar1 from '../assets/cliente-1.jpg';
@@ -57,6 +57,8 @@ import img33 from '../assets/gallery/gallery33.jpeg';
 import img34 from '../assets/gallery/gallery34.jpeg';
 import img35 from '../assets/gallery/gallery35.jpeg';
 import img36 from '../assets/gallery/gallery36.jpeg';
+import { naturaProducts } from './naturaProducts';
+import { andreaProducts } from './andreaProducts';
 
 export const images = [
   { src: img1, alt: 'Imagen 1', title: 'Sudadera urbana', sku: 'SKU-3001', description: 'Sudadera ligera con capucha para uso diario.', features: ['Algodón suave', 'Capucha ajustable', 'Bolsillo frontal'] },
@@ -96,73 +98,6 @@ export const images = [
   { src: img35, alt: 'Imagen 35', title: 'Sudadera con zipper', sku: 'SKU-3035', description: 'Sudadera con cierre frontal y bolsillos laterales.', features: ['Cierre frontal', 'Capucha ajustable', 'Algodón suave'] },
   { src: img36, alt: 'Imagen 36', title: 'Abrigo invernal',  sku: 'SKU-3036', description: 'Abrigo grueso para invierno frío.', features: ['Forro térmico', 'Capucha amplia', 'Botones resistentes'] }
 ];
-
-export const naturaProducts = [
-  {
-    id: 'NATMEX-95937',
-    name: 'Crema Nutritiva para Manos Tododia Cereza y Avellana 50 ml',
-    brand: 'Tododia',
-    price: 132.0,
-    rating: 4.0,
-    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dw1646596f/produtos/NATMEX-95937_1.jpg',
-    url: 'https://www.natura.com.mx/p/crema-nutritiva-para-manos-tododia-cereza-y-avellana-50-ml/NATMEX-95937?position=1&listTitle=manual+showcase+-+descubre+el+mundo+natura',
-  },
-  {
-    id: 'NATMEX-99183',
-    name: 'Crema Nutritiva para el Cuerpo Tododia Cereza y Avellana 400 ml',
-    brand: 'Tododia',
-    price: 255.0,
-    rating: 4.8,
-    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dw7988583a/produtos/NATMEX-99183_1.jpg',
-    url: 'https://www.natura.com.mx/p/crema-nutritiva-para-el-cuerpo-tododia-cereza-y-avellana-400-ml/NATMEX-99183?position=2&listTitle=manual+showcase+-+descubre+el+mundo+natura',
-  },
-  {
-    id: 'NATMEX-21307',
-    name: 'Aceite Bifasico Corporal Tododia Cereza y Avellana 120 ml',
-    brand: 'Tododia',
-    price: 285.0,
-    rating: null,
-    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dw6726bca8/produtos/NATMEX-21307_1.jpg',
-    url: 'https://www.natura.com.mx/p/aceite-bifasico-corporal-tododia-cereza-y-avellana-120-ml/NATMEX-21307?position=3&listTitle=manual+showcase+-+descubre+el+mundo+natura',
-  },
-  {
-    id: 'NATMEX-23218',
-    name: 'Crema Nutritiva para el Cuerpo Tododia Cereza y Avellana 200 ml',
-    brand: 'Tododia',
-    price: 167.0,
-    rating: 5.0,
-    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dwa25859d6/produtos/NATMEX-23218_1.jpg',
-    url: 'https://www.natura.com.mx/p/crema-nutritiva-para-el-cuerpo-tododia-cereza-y-avellana-200-ml/NATMEX-23218?position=4&listTitle=manual+showcase+-+descubre+el+mundo+natura',
-  },
-  {
-    id: 'NATMEX-95840',
-    name: 'Jabon en Barra Puro Vegetal Tododia Cereza y Avellana 5x90 g',
-    brand: 'Tododia',
-    price: 153.3,
-    rating: 5.0,
-    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dw57f7a13b/produtos/PRODUTO/NATMEX-95840_1.jpg',
-    url: 'https://www.natura.com.mx/p/jabon-en-barra-puro-vegetal-tododia-cereza-y-avellana-5-unidades-de-90-g/NATMEX-95840?position=5&listTitle=manual+showcase+-+descubre+el+mundo+natura',
-  },
-  {
-    id: 'NATMEX-95843',
-    name: 'Jabon Liquido en Gel Tododia Cereza y Avellana 300 ml',
-    brand: 'Tododia',
-    price: 238.0,
-    rating: null,
-    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dwa7fae200/produtos/NATMEX-95843_1.jpg',
-    url: 'https://www.natura.com.mx/p/jabon-liquido-en-gel-tododia-cereza-y-avellana-300-ml/NATMEX-95843?position=6&listTitle=manual+showcase+-+descubre+el+mundo+natura',
-  },
-  {
-    id: 'NATMEX-148001',
-    name: 'Desodorante Antitranspirante en Crema Tododia Cereza y Avellana 80 g',
-    brand: 'Tododia',
-    price: 108.0,
-    rating: 5.0,
-    image: 'https://production.na01.natura.com/on/demandware.static/-/Sites-nat-mex-b2b2c-catalog/default/dw8c61a7c7/produtos/NATMEX-148001_1.jpg',
-    url: 'https://www.natura.com.mx/p/desodorante-antitranspirante-en-crema-tododia-cereza-y-avellana-80-g/NATMEX-148001?position=7&listTitle=manual+showcase+-+descubre+el+mundo+natura',
-  },
-];
-
 
 export const catalogs = [
   {
@@ -218,10 +153,18 @@ export const testimonials = [
   { id: 103, author: 'Alicia Keys', quote: 'El maquillaje tiene pigmentacion y acabado espectacular. La entrega fue rapidisima.', avatar: avatar2, rating: 4 },
 ];
 
-export const products = [
+const baseProducts = [
   { id: 201, catalogId: 1, name: 'Classic Striped Shirt', price: 40.0, image: product0, featured: true },
   { id: 202, catalogId: 1, name: 'Elegance White Dress', price: 75.0, image: product1, featured: true },
   { id: 203, catalogId: 1, name: '4 Button Blazer', price: 120.0, image: product2, featured: true },
   { id: 204, catalogId: 1, name: 'Varsity Jacket', price: 95.0, image: product3, featured: true },
   { id: 205, catalogId: 2, name: 'Velvet Matte Lipstick', price: 22.0, image: product4, featured: true },
 ];
+
+export const products = [
+  ...baseProducts,
+  ...andreaProducts,
+  ...naturaProducts,
+];
+
+export { naturaProducts, andreaProducts };
