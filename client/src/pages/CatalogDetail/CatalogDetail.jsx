@@ -21,7 +21,7 @@ function CatalogDetail() {
 
   // ... (lógica de loading/error)
 
-  if (loading) return <div>Cargando detalles del catálogo...</div>;
+  if (loading) return <div>Cargando detalles de la marca...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!catalog) return null; // No mostrar nada si el catálogo es nulo
 
@@ -29,7 +29,7 @@ function CatalogDetail() {
     <>
       <div className="catalog-detail-page">
         <div className="back-link">
-          <Link to="/catalogs">{'<'} Volver a catalogos</Link>
+          <Link to="/catalogs">{'<'} Volver a Nuestras Marcas</Link>
         </div>
         {/* ... (contenido existente de la página) ... */}
         <div className="detail-content">

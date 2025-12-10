@@ -16,7 +16,8 @@ const normalizeNumber = (value) => {
 
 const naturaProducts = (naturaRaw || []).map((item, index) => {
   const name = pickValue(item, (key) => key.toLowerCase().includes('nombre')) || 'Producto Natura';
-  const brand = pickValue(item, (key) => key.toLowerCase().includes('marca')) || 'Natura';
+  // Marca fija porque este dataset proviene del JSON de Natura
+  const brand = 'Natura';
   const price = normalizeNumber(pickValue(item, (key) => key.toLowerCase().includes('precio')));
   const rating = normalizeNumber(pickValue(item, (key) => key.toLowerCase().includes('calific')));
   const image = pickValue(item, (key) => key.toLowerCase().includes('imagen')) || '';
