@@ -1,5 +1,5 @@
 // client/src/components/FeaturedProducts.jsx
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './FeaturedProducts.css';
 import logo from '../assets/logo.png';
@@ -10,8 +10,9 @@ import useCartStore from '../stores/cartStore';
 import { products as allProducts } from '../data/mockData';
 
 function FeaturedProducts() {
+  const PAGE_SIZE = 20;
   // Mostrar hasta 6 productos por marca para resaltar un mix balanceado
-  const products = React.useMemo(() => {
+  const products = useMemo(() => {
     const grouped = allProducts.reduce((acc, product) => {
       const brand = product.brand || 'Sin marca';
       acc[brand] = acc[brand] || [];
@@ -21,6 +22,18 @@ function FeaturedProducts() {
 
     return Object.values(grouped).flat();
   }, []);
+  const [page, setPage] = useState(1);
+  const totalPages = Math.max(1, Math.ceil(products.length / PAGE_SIZE));
+
+  // Corrige la pagina si cambia la cantidad total
+  useEffect(() => {
+    if (page > totalPages) setPage(totalPages);
+  }, [page, totalPages]);
+
+  const paginatedProducts = useMemo(() => {
+    const start = (page - 1) * PAGE_SIZE;
+    return products.slice(start, start + PAGE_SIZE);
+  }, [page, products]);
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
   const [feedback, setFeedback] = useState('');
@@ -28,7 +41,7 @@ function FeaturedProducts() {
 
   const formatPrice = (value) => (typeof value === 'number' ? `$${value.toFixed(2)} MXN` : 'Consultar precio');
 
-  const slides = products?.map((product) => {
+  const slides = paginatedProducts?.map((product) => {
     const priceLabel = formatPrice(product.price);
     const featureList = [
       product.brand ? `Linea ${product.brand}` : 'Coleccion Natura',
@@ -65,15 +78,23 @@ function FeaturedProducts() {
     setFeedback(`${slide.title || 'Producto'} agregado a la bolsa`);
   };
 
+  const handlePageChange = (newPage) => {
+    // ensure requested page is within valid bounds
+    if (typeof newPage !== 'number') return;
+    if (newPage < 1) return;
+    if (newPage > totalPages) return;
+    setPage(newPage);
+  };
+
   return (
     <section className="featured-products-section">
       <div className="section-header">
         <h2>Productos Destacados</h2>
-        <Link to="/catalogs" className="see-all-link">Ver Catálogos</Link>
+        <Link to="/catalogs" className="see-all-link">Ver Catalogos</Link>
       </div>
 
       <div className="products-grid">
-        {products && products.map((product, i) => (
+        {paginatedProducts && paginatedProducts.map((product, i) => (
           <div className="grid-item" key={product.id || product.sku || product.title} onClick={() => handleSelect(i)}>
             <div className="grid-image">
               <img src={product.image} alt={product.name} />
@@ -91,6 +112,28 @@ function FeaturedProducts() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="products-pagination">
+        <button
+              type="button"
+              className="page-btn"
+              onClick={() => handlePageChange(page - 1)}
+              disabled={page === 1}
+            >
+              &lt;
+            </button>
+            <span className="page-status">
+              {page} de {totalPages}
+            </span>
+            <button
+              type="button"
+              className="page-btn"
+              onClick={() => handlePageChange(page + 1)}
+              disabled={page === totalPages}
+            >
+              &gt;
+            </button>
       </div>
 
       <Lightbox

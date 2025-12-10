@@ -24,29 +24,29 @@ function Footer() {
 
           {/* Columna 2: Enlaces Rápidos */}
           <div className="footer-column">
-            <h4>Navegación</h4>
+            <h2>Navegación</h2>
             <ul>
               <li><Link to="/about">Sobre Nosotros</Link></li>
               <li><Link to="/contact">Contacto</Link></li>
               <li><Link to="/how-to-buy">Cómo Comprar</Link></li>
-              <li><Link to="/products">Todos los Productos</Link></li>
+              <li><Link to="/gallery">Todos los Productos</Link></li>
             </ul>
           </div>
 
           {/* Columna 3: Catálogos */}
           <div className="footer-column">
-            <h4>Catálogos</h4>
+            <h2>Productos</h2>
             <ul>
-              <li><Link to="/catalogs">Ropa</Link></li>
               <li><Link to="/catalogs">Maquillaje</Link></li>
               <li><Link to="/catalogs">Zapatos</Link></li>
+              <li><Link to="/catalogs">Ropa</Link></li>
               <li><Link to="/catalogs">Hogar</Link></li>
             </ul>
           </div>
 
           {/* Columna 4: Redes Sociales */}
           <div className="footer-column">
-            <h4>Síguenos</h4>
+            <h3>Síguenos</h3>
             <div className="social-icons">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
@@ -57,7 +57,7 @@ function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} SonicStore. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} SonicStore. Todos los derechos reservados. Powered By Ingeniería Web Miranda.</p>
         </div>
       </div>
     </footer>

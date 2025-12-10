@@ -43,7 +43,7 @@ export const catalogs = [
   {
     id: 3,
     name: 'Andrea',
-    description: 'Moda, calzado y hogar para toda la familia, con compras seguras y recompensas.',
+    description: 'Moda, calzado y hogar para toda la familia, con compras seguras.',
     image: brandImg03,
     catalogUrl: 'https://ejemplo.com/catalogos/andrea',
     longDescription:
