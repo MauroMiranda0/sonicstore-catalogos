@@ -8,7 +8,7 @@ import "yet-another-react-lightbox/styles.css";
 import './Gallery.css';
 import useCartStore from '../../stores/cartStore';
 import { FaCheckCircle } from 'react-icons/fa';
-import { images } from '../../data/mockData';
+import { products } from '../../data/mockData';
 import logo from '../../assets/logo.svg';
 
 function Gallery() {
@@ -17,11 +17,24 @@ function Gallery() {
   const [feedback, setFeedback] = useState('');
   const [page, setPage] = useState(1);
   const pageSize = 12;
-  const totalPages = Math.max(1, Math.ceil(images.length / pageSize));
+  const galleryItems = (products || []).map((item) => ({
+    ...item,
+    src: item.image,
+    alt: item.name,
+    title: item.name,
+    sku: item.id,
+    priceLabel: typeof item.price === 'number' ? `$${item.price.toFixed(2)} MXN` : 'Consultar precio',
+    features: [
+      item.brand ? `Linea ${item.brand}` : 'Coleccion destacada',
+      item.rating ? `Calificacion: ${item.rating} / 5` : 'Nuevo en catalogo',
+      item.catalogId ? `Catalogo #${item.catalogId}` : 'Catalogo digital',
+    ].filter(Boolean),
+  }));
+  const totalPages = Math.max(1, Math.ceil(galleryItems.length / pageSize));
   const addProduct = useCartStore((state) => state.addProduct);
 
   const start = (page - 1) * pageSize;
-  const paginatedImages = images.slice(start, start + pageSize);
+  const paginatedItems = galleryItems.slice(start, start + pageSize);
 
   const handleSelect = (i) => {
     setIndex(i);
@@ -62,18 +75,24 @@ function Gallery() {
       <section className="gallery-section">
         <div className="container">
           <div className="image-grid">
-            {paginatedImages.map((image, i) => (
+            {paginatedItems.map((item, i) => (
               <div
                 className="grid-item"
                 key={i}
                 onClick={() => handleSelect(i)}
               >
                 <div className="grid-image">
-                  <img src={image.src} alt={image.alt} />
+                  <img src={item.src} alt={item.alt} />
                   <div className="image-overlay">Ver</div>
                 </div>
                 <div className="grid-info">
-                  <p className="grid-title">{image.title}</p>
+                  <div>
+                    <p className="grid-title">{item.title}</p>
+                    {item.brand && <p className="grid-brand">{item.brand}</p>}
+                  </div>
+                  <div className="grid-meta">
+                    <span className="grid-price">{item.priceLabel}</span>
+                  </div>
                   <img src={logo} alt="SonicStore" className="grid-logo" />
                 </div>
               </div>
@@ -111,7 +130,7 @@ function Gallery() {
           setOpen(false);
           setFeedback('');
         }}
-        slides={paginatedImages}
+        slides={paginatedItems}
         index={index}
         on={{
           view: ({ index: nextIndex }) => {
@@ -128,6 +147,21 @@ function Gallery() {
                   <div>
                     <h3>{slide.title}</h3>
                     {slide.sku && <p className="lightbox-sku">SKU: {slide.sku}</p>}
+                    {slide.brand && <p className="lightbox-brand">{slide.brand}</p>}
+                  </div>
+                  <div className="lightbox-price-block">
+                    {slide.priceLabel && <span className="lightbox-price">{slide.priceLabel}</span>}
+                    {slide.url && (
+                      <a
+                        className="lightbox-link"
+                        href={slide.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Ver producto
+                      </a>
+                    )}
                   </div>
                 </div>
 
