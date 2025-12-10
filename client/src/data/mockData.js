@@ -21,18 +21,18 @@ export const catalogs = [
   {
     id: 1,
     name: 'Natura',
-    description: 'Belleza sustentable con activos vegetales de la biodiversidad brasileÇña.',
+    description: 'Belleza sustentable con activos vegetales de la biodiversidad brasileña.',
     image: brandImg01,
     catalogUrl: 'https://www.natura.com.mx/',
     longDescription:
-      'Disfruta la lÇðnea completa de bienestar de Natura: fÇürmulas con activos vegetales de la biodiversidad brasileÇña, fragancias icÇünicas y cuidado personal sustentable. Explora los catÇ­logos en lÇðnea para elegir sets, ediciones especiales y regalos de temporada con entrega a domicilio y descuentos exclusivos.',
+      'Disfruta la línea completa de bienestar de Natura: fórmulas con activos vegetales de la biodiversidad brasileña, fragancias únicas y cuidado personal sustentable. Explora los catálogos en línea para elegir sets, ediciones especiales y regalos de temporada con entrega a domicilio y descuentos exclusivos.',
     brandStory:
       'Natura es la marca sustentable nÇ§mero uno del mundo, fundada en 1969. Combina innovaciÇün, ingredientes de origen vegetal y un compromiso profundo con el medio ambiente para ofrecer belleza responsable y de alta calidad.',
   },
   {
     id: 2,
     name: 'Terramar Brands',
-    description: 'Ciencia y naturaleza en fÇürmulas premium para la mujer latina.',
+    description: 'Ciencia y naturaleza en fórmulas premium para la mujer latina.',
     image: brandImg02,
     catalogUrl: 'https://ejemplo.com/catalogos/terramar',
     longDescription:
@@ -109,7 +109,7 @@ export const catalogs = [
 
 export const testimonials = [
   { id: 101, author: 'Flea', quote: 'Estos zapatos tienen un look increible y el servicio al cliente fue de primera.', avatar: avatar0, rating: 5 },
-  { id: 102, author: 'Carlos Santana', quote: 'La seleccion de productos es celestial. Encontre el estilo que buscaba por anos.', avatar: avatar1, rating: 5 },
+  { id: 102, author: 'Carlos Santana', quote: 'La seleccion de productos es celestial. Encontre el estilo que buscaba por anos.', avatar: avatar1, rating: 4.5 },
   { id: 103, author: 'Alicia Keys', quote: 'El maquillaje tiene pigmentacion y acabado espectacular. La entrega fue rapidisima.', avatar: avatar2, rating: 4 },
 ];
 
