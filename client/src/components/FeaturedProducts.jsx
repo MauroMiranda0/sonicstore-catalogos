@@ -7,10 +7,20 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { FaCheckCircle } from 'react-icons/fa';
 import useCartStore from '../stores/cartStore';
-import { naturaProducts } from '../data/mockData';
+import { products as allProducts } from '../data/mockData';
 
 function FeaturedProducts() {
-  const products = naturaProducts;
+  // Mostrar hasta 6 productos por marca para resaltar un mix balanceado
+  const products = React.useMemo(() => {
+    const grouped = allProducts.reduce((acc, product) => {
+      const brand = product.brand || 'Sin marca';
+      acc[brand] = acc[brand] || [];
+      if (acc[brand].length < 6) acc[brand].push(product);
+      return acc;
+    }, {});
+
+    return Object.values(grouped).flat();
+  }, []);
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
   const [feedback, setFeedback] = useState('');
@@ -58,8 +68,8 @@ function FeaturedProducts() {
   return (
     <section className="featured-products-section">
       <div className="section-header">
-        <h2>Nuevos Productos</h2>
-        <Link to="/catalogs" className="see-all-link">Ver Catalogos</Link>
+        <h2>Productos Destacados</h2>
+        <Link to="/catalogs" className="see-all-link">Ver Catálogos</Link>
       </div>
 
       <div className="products-grid">

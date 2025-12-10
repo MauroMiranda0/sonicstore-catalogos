@@ -23,7 +23,7 @@ function Testimonials() {
   if (error) return <div className="error-message">Error: {error.message}</div>;
  return (
     <div className="testimonials-page">
-      <h2>Lo que dicen nuestros clientes</h2>
+      <h1>Lo que dicen nuestros clientes</h1>
       <p className="page-subtitle">Opiniones y experiencias de nuestra increíble comunidad.</p>
       
       <div className="testimonials-grid">

@@ -81,8 +81,8 @@ function Header({ onCartClick, onHowToBuyClick }) {
             <ul>
               <li><NavLink to="/" onClick={closeMenu}>Inicio</NavLink></li>
               <li><NavLink to="/about" onClick={closeMenu}>Nosotros</NavLink></li>
-              <li><NavLink to="/catalogs" onClick={closeMenu}>Catalogos</NavLink></li>
-              <li><NavLink to="/gallery" onClick={closeMenu}>Galeria</NavLink></li>
+              <li><NavLink to="/catalogs" onClick={closeMenu}>Marcas</NavLink></li>
+              <li><NavLink to="/gallery" onClick={closeMenu}>Galería</NavLink></li>
               <li><NavLink to="/contact" onClick={closeMenu}>Contacto</NavLink></li>
             </ul>
           </nav>

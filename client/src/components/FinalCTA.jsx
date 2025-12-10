@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './FinalCTA.css';
-import ctaImage from '../assets/hero-product-1.mp4'; // Reutilizamos una imagen
+import ctaImage from '../assets/hero-product-2.jpg'; // Reutilizamos una imagen
 
 function FinalCTA() {
   return (

@@ -1,13 +1,14 @@
 /* client/src/pages/Testimonials/Testimonials.css */
-.testimonials-page h2 {
+.testimonials-page h1 {
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
   font-size: 2.5rem;
 }
 
 .page-subtitle {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-size: 1.1rem;
   color: #666;
   max-width: 500px;
@@ -59,7 +60,8 @@
 }
 
 .star-rating {
-  color: #f8c325; /* Un color dorado para las estrellas */
+  color: #f8c325;
+  /* Un color dorado para las estrellas */
   font-size: 1rem;
 }
 
@@ -74,10 +76,12 @@
   .testimonials-page h2 {
     font-size: 2rem;
   }
+
   .testimonials-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
   .testimonial-card {
     padding: 1.5rem;
   }

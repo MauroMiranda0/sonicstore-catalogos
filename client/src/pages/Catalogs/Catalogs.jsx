@@ -16,7 +16,7 @@ function Catalogs() {
 
   return (
     <div className="catalogs-page">
-      <h2>Nuestros Catálogos</h2>
+      <h2>Nuestras Marcas</h2>
       <div className="catalogs-grid">
         {/* Usamos 'catalogs &&' como guarda por si data es null inicialmente */}
         {catalogs && catalogs.map(catalog => (
@@ -29,7 +29,7 @@ function Catalogs() {
                 <h3>{catalog.name}</h3>
                 <p>{catalog.description}</p>
                 <div className="card-button">
-                  Ver Catalogo
+                  Ver Catálogos
                 </div>
               </div>
             </div>

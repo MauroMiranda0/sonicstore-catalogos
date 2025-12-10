@@ -67,7 +67,7 @@ function Gallery() {
     <div className="gallery-page">
       <header className="page-header-alt">
         <div className="container">
-          <h1>Galeria de Estilos</h1>
+          <h1>Galeria de Productos</h1>
           <p className="page-subtitle">Inspirate con nuestra comunidad y descubre como combinar nuestros productos.</p>
         </div>
       </header>
