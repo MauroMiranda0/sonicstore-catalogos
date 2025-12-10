@@ -1,8 +1,8 @@
 /* client/src/pages/CatalogDetail/CatalogDetail.css */
 .catalog-detail-page {
-    max-width: 900px;
+    max-width: 1100px;
     margin: auto;
-    padding: 2rem;
+    padding: 2.5rem 1.5rem 3rem;
 }
 
 .back-link {
@@ -16,31 +16,65 @@
     text-decoration: underline;
 }
 
-.detail-content {
-    display: flex;
+.detail-card {
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) 1.2fr;
     gap: 2rem;
+    align-items: stretch;
+    background: var(--surface-color, #fff);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
-.detail-content img {
-    max-width: 400px;
-    border-radius: 8px;
+.detail-media {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fafafa;
+    border: 1px solid var(--border-color);
+    display: grid;
+    place-items: center;
+    min-height: 320px;
 }
 
-.detail-info h1 {
-    margin-top: 0;
+.detail-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
+
+.detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+}
+
+.catalog-title {
+    margin: 0;
+    font-size: 2rem;
+}
+
 .catalog-description {
     color: var(--text-main);
     line-height: 1.6;
+    margin: 0;
+    text-align: justify;
 }
+
 .catalog-about {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    display: grid;
+    gap: 0.4rem;
 }
+
 .catalog-about h3 {
-    margin: 0.5rem 0 0.25rem;
+    margin: 0;
+}
+
+.catalog-about p {
+    text-align: justify;
 }
 
 /* client/src/pages/CatalogDetail/CatalogDetail.css */
@@ -50,6 +84,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
 }
 
 .view-catalog-btn, .add-to-order-btn {
@@ -81,12 +116,10 @@
 }
 
 @media (max-width: 960px) {
-  .detail-content {
-    flex-direction: column;
-    align-items: flex-start;
+  .detail-card {
+    grid-template-columns: 1fr;
   }
-  .detail-content img {
-    max-width: 100%;
+  .catalog-actions {
     width: 100%;
   }
 }
@@ -94,6 +127,9 @@
 @media (max-width: 600px) {
   .catalog-detail-page {
     padding: 1.25rem;
+  }
+  .detail-card {
+    padding: 1.1rem;
   }
   .catalog-actions {
     gap: 0.75rem;

@@ -109,7 +109,7 @@ function Gallery() {
               &lt;
             </button>
             <span className="page-status">
-              Pagina {page} de {totalPages}
+              {page} de {totalPages}
             </span>
             <button
               type="button"

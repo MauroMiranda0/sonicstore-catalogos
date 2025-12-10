@@ -137,6 +137,43 @@
   width: auto;
 }
 
+.products-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.pagination-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pagination-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-btn:disabled {
+  background: var(--border-color);
+  color: var(--muted-text);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.pagination-info {
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
 @media (max-width: 900px) {
   .section-header {
     flex-direction: column;
