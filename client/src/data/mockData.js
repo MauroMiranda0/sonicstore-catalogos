@@ -1,13 +1,13 @@
 // client/src/data/mockData.js
 // Datos locales para evitar dependencias del backend en produccion
-import brandImg01 from '../assets/marcas/natura.jpg';
-import brandImg02 from '../assets/marcas/terramar.jpg';
-import brandImg03 from '../assets/marcas/andrea.jpg';
-import brandImg04 from '../assets/marcas/lbel.jpeg';
-import brandImg05 from '../assets/marcas/cyzone.jpeg';
-import brandImg06 from '../assets/marcas/esika.webp';
-import brandImg07 from '../assets/marcas/avon.jpg';
-import brandImg08 from '../assets/marcas/ilusion.webp';
+import brandImg01 from '../assets/marcas/natura.png';
+import brandImg02 from '../assets/marcas/terramar.png';
+import brandImg03 from '../assets/marcas/andrea.png';
+import brandImg04 from '../assets/marcas/lbel.png';
+import brandImg05 from '../assets/marcas/cyzone.png';
+import brandImg06 from '../assets/marcas/esika.png';
+import brandImg07 from '../assets/marcas/avon.png';
+import brandImg08 from '../assets/marcas/ilusion.png';
 
 import avatar0 from '../assets/cliente-0.jpg';
 import avatar1 from '../assets/cliente-1.jpg';

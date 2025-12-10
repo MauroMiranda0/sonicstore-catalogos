@@ -1,29 +1,25 @@
 // client/src/pages/CatalogDetail/CatalogDetail.jsx
-import React, { useState } from 'react'; // 1. Importa useState
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
-import Modal from '../../components/Modal'; // 2. Importa Modal
-import AddProductForm from '../../components/AddProductForm'; // 3. Importa el formulario
+import Modal from '../../components/Modal';
+import AddProductForm from '../../components/AddProductForm';
 import './CatalogDetail.css';
 
 function CatalogDetail() {
   const { id } = useParams();
   const { data: catalog, loading, error } = useFetch(`/api/catalogs/${id}`);
-  
-  // 4. Estado para el modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleViewCatalog = () => {
-    const url = catalog.catalogUrl || catalog.url || catalog.link || catalog.image;
+    const url = catalog?.catalogUrl || catalog?.url || catalog?.link || catalog?.image;
     if (!url) return;
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
-  // ... (lógica de loading/error)
-
   if (loading) return <div>Cargando detalles de la marca...</div>;
   if (error) return <div>Error: {error}</div>;
-  if (!catalog) return null; // No mostrar nada si el catálogo es nulo
+  if (!catalog) return null;
 
   return (
     <>
@@ -31,40 +27,48 @@ function CatalogDetail() {
         <div className="back-link">
           <Link to="/catalogs">{'<'} Volver a Nuestras Marcas</Link>
         </div>
-        {/* ... (contenido existente de la página) ... */}
-        <div className="detail-content">
-          <img src={catalog.image} alt={catalog.name} />
+
+        <div className="detail-card">
+          <div className="detail-media">
+            <img src={catalog.image} alt={catalog.name} />
+          </div>
+
           <div className="detail-info">
-            <h1>{catalog.name}</h1>
-            <p className="catalog-description">{catalog.description}</p>
+            <h1 className="catalog-title">{catalog.name}</h1>
+            <p className="catalog-description">
+              {catalog.description ||
+                'Belleza sustentable con activos de la biodiversidad. Descubre sus lineas iconicas y beneficios destacados.'}
+            </p>
+
             <div className="catalog-about">
-              <h3>Descripción completa</h3>
+              <h3>Descripcion completa</h3>
               <p>
                 {catalog.longDescription ||
-                  'Descubre toda la línea de productos y las novedades destacadas de esta marca. Consulta tallas, colores, acabados y todas las variantes disponibles en el catálogo oficial.'}
-              </p>
-              <h3>Reseña de la marca</h3>
-              <p>
-                {catalog.brandStory ||
-                  'Marca reconocida por su calidad y tendencia. Combina innovación, estilo y precios competitivos para ofrecerte colecciones frescas temporada tras temporada.'}
+                  'Disfruta la linea completa: texturas sensoriales, formulas responsables y sets listos para regalar. Explora lanzamientos, promociones y colecciones recomendadas.'}
               </p>
             </div>
+
+            {catalog.brandStory && (
+              <div className="catalog-about">
+                <h3>Resena de la marca</h3>
+                <p>{catalog.brandStory}</p>
+              </div>
+            )}
+
             <div className="catalog-actions">
-              <button className="view-catalog-btn" onClick={handleViewCatalog}>Ver Catálogo Completo</button>
-              {/* 5. Botón para añadir producto manualmente */}
+              <button className="view-catalog-btn" onClick={handleViewCatalog}>Ver Catalogo Completo</button>
               <button className="add-to-order-btn" onClick={() => setIsModalOpen(true)}>
-                Añadir Producto de este Catálogo
+                Anadir producto de este catalogo
               </button>
             </div>
           </div>
         </div>
       </div>
-      
-      {/* 6. Renderiza el Modal */}
-      <Modal 
-        isOpen={isModalOpen} 
+
+      <Modal
+        isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title={`Añadir de ${catalog.name}`}
+        title={`Anadir de ${catalog.name}`}
       >
         <AddProductForm onProductAdded={() => setIsModalOpen(false)} />
       </Modal>

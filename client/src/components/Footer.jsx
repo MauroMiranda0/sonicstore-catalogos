@@ -6,6 +6,10 @@ import logo from '../assets/logo.png';
 import './Footer.css';
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="site-footer">
       <div className="container">
@@ -26,10 +30,10 @@ function Footer() {
           <div className="footer-column">
             <h2>Navegación</h2>
             <ul>
-              <li><Link to="/about">Sobre Nosotros</Link></li>
-              <li><Link to="/contact">Contacto</Link></li>
-              <li><Link to="/how-to-buy">Cómo Comprar</Link></li>
-              <li><Link to="/gallery">Todos los Productos</Link></li>
+              <li><Link to="/about" onClick={scrollToTop}>Sobre Nosotros</Link></li>
+              <li><Link to="/contact" onClick={scrollToTop}>Contacto</Link></li>
+              <li><Link to="/how-to-buy" onClick={scrollToTop}>Cómo Comprar</Link></li>
+              <li><Link to="/gallery" onClick={scrollToTop}>Todos los Productos</Link></li>
             </ul>
           </div>
 
@@ -37,10 +41,10 @@ function Footer() {
           <div className="footer-column">
             <h2>Productos</h2>
             <ul>
-              <li><Link to="/catalogs">Maquillaje</Link></li>
-              <li><Link to="/catalogs">Zapatos</Link></li>
-              <li><Link to="/catalogs">Ropa</Link></li>
-              <li><Link to="/catalogs">Hogar</Link></li>
+              <li><Link to="/catalogs" onClick={scrollToTop}>Maquillaje</Link></li>
+              <li><Link to="/catalogs" onClick={scrollToTop}>Zapatos</Link></li>
+              <li><Link to="/catalogs" onClick={scrollToTop}>Ropa</Link></li>
+              <li><Link to="/catalogs" onClick={scrollToTop}>Hogar</Link></li>
             </ul>
           </div>
 
