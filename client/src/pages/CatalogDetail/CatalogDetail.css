@@ -61,6 +61,7 @@
     color: var(--text-main);
     line-height: 1.6;
     margin: 0;
+    text-align: justify;
 }
 
 .catalog-about {
@@ -70,6 +71,10 @@
 
 .catalog-about h3 {
     margin: 0;
+}
+
+.catalog-about p {
+    text-align: justify;
 }
 
 /* client/src/pages/CatalogDetail/CatalogDetail.css */

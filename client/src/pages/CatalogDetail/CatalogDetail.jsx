@@ -41,7 +41,7 @@ function CatalogDetail() {
             </p>
 
             <div className="catalog-about">
-              <h3>Descripcion completa</h3>
+              <h3>Descripción completa</h3>
               <p>
                 {catalog.longDescription ||
                   'Disfruta la linea completa: texturas sensoriales, formulas responsables y sets listos para regalar. Explora lanzamientos, promociones y colecciones recomendadas.'}
@@ -50,15 +50,15 @@ function CatalogDetail() {
 
             {catalog.brandStory && (
               <div className="catalog-about">
-                <h3>Resena de la marca</h3>
+                <h3>Reseña de la marca</h3>
                 <p>{catalog.brandStory}</p>
               </div>
             )}
 
             <div className="catalog-actions">
-              <button className="view-catalog-btn" onClick={handleViewCatalog}>Ver Catalogo Completo</button>
+              <button className="view-catalog-btn" onClick={handleViewCatalog}>Ver Catálogo Completo</button>
               <button className="add-to-order-btn" onClick={() => setIsModalOpen(true)}>
-                Anadir producto de este catalogo
+                Anadir producto de este catálogo
               </button>
             </div>
           </div>
